@@ -1,11 +1,5 @@
 import { PageHeader } from "@/components/page-header";
-import {
-  BaggageLeg,
-  FlightLeg,
-  PackingLeg,
-  SpecialTravelLeg,
-  TransportLeg,
-} from "@/components/travel-sections";
+import { BaggageLeg, FlightLeg, SpecialTravelLeg, TransportLeg } from "@/components/travel-sections";
 import { getTravelInformation } from "@/lib/content";
 
 export default async function ReiseinformasjonPage() {
@@ -16,7 +10,7 @@ export default async function ReiseinformasjonPage() {
       <PageHeader
         label="Reiseplan"
         title="Reiseinformasjon"
-        lead="Din komplette reiserute — fly, transport, bagasje og pakkeliste for kanalferien."
+        lead="Din komplette reiserute — fly, transport og bagasje for kanalferien."
       />
 
       <div className="itinerary">
@@ -27,8 +21,6 @@ export default async function ReiseinformasjonPage() {
         <FlightLeg label="Hjemreise" title="Fly fra" flight={travel.flightFrom} />
         <TransportLeg label="Avreise" title="Transport fra" transport={travel.transportFrom} />
       </div>
-
-      <PackingLeg categories={travel.packingCategories ?? []} />
     </div>
   );
 }

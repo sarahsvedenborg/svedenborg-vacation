@@ -1,9 +1,8 @@
 import { PageHeader } from "@/components/page-header";
 
 const emergencyLinks = [
-  { href: "tel:+441948662533", label: "Whitchurch Marina", value: "+44 1948 662 533" },
+  { href: "tel:+4403303330590", label: "Whitchurch Marina", value: "+44 0330 333 0590" },
   { href: "tel:999", label: "Nødnummer UK", value: "999" },
-  { href: "https://www.nhs.uk/", label: "NHS informasjon", value: "nhs.uk" },
   { href: "https://canalrivertrust.org.uk/", label: "Canal & River Trust", value: "canalrivertrust.org.uk" },
 ];
 
@@ -12,8 +11,8 @@ export default function NoedinfoPage() {
     <div className="space-y-10">
       <PageHeader
         label="Viktig"
-        title="Nødinformasjon"
-        lead="Hurtigtilgang for telefonnumre og helsehjelp. Lagre siden på startskjermen."
+        title="Nødnumre"
+        lead="Hurtigtilgang for telefonnumre."
       />
 
       <div className="divide-y divide-border">

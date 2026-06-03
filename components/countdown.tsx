@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 
-type Props = { targetDate: string };
+type Props = { targetDate: string; variant?: "default" | "overlay" };
 
 function getRemaining(target: string) {
   const delta = new Date(target).getTime() - Date.now();
@@ -13,7 +13,7 @@ function getRemaining(target: string) {
   return { days, hours, minutes };
 }
 
-export function Countdown({ targetDate }: Props) {
+export function Countdown({ targetDate, variant = "default" }: Props) {
   const [remaining, setRemaining] = useState(() => getRemaining(targetDate));
 
   useEffect(() => {
@@ -26,6 +26,17 @@ export function Countdown({ targetDate }: Props) {
       `${remaining.days} dager · ${remaining.hours} timer · ${remaining.minutes} min`,
     [remaining]
   );
+
+  if (variant === "overlay") {
+    return (
+      <div className="space-y-1 text-center">
+        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-white/75">
+          Nedtelling til avreise
+        </p>
+        <p className="font-serif text-xl font-medium text-white md:text-2xl">{text}</p>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-1">

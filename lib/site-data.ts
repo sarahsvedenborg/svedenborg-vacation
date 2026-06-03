@@ -10,6 +10,8 @@ export type SiteSettingsData = {
   countdownDate: string;
   heroImageUrl: string;
   heroImageAlt: string;
+  foodHeaderImageUrl: string;
+  foodHeaderImageAlt: string;
   quickFacts: QuickFact[];
   exploreActivityLinks: ExploreActivityLink[];
 };
@@ -33,6 +35,9 @@ export const siteSettings: SiteSettingsData = {
   heroImageUrl:
     "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1600&q=80",
   heroImageAlt: "Llangollen-kanalen",
+  foodHeaderImageUrl:
+    "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80",
+  foodHeaderImageAlt: "Glutenfritt brød og frokost",
   quickFacts: [
     { title: "Startmarina", text: "Whitchurch Marina" },
     { title: "Sluttmarina", text: "Whitchurch Marina" },

@@ -147,15 +147,21 @@ export function BaggageLeg({ items }: { items: BaggageItem[] }) {
 
 export function PackingLeg({
   categories,
+  hideHeader = false,
 }: {
   categories: { title: string; items: string[] }[];
+  hideHeader?: boolean;
 }) {
   return (
-    <section className="border-t border-border pt-10">
-      <p className="section-label mb-2">Forberedelser</p>
-      <h2 className="font-serif text-3xl font-semibold">Pakkeliste</h2>
+    <section className={hideHeader ? undefined : "border-t border-border pt-10"}>
+      {!hideHeader ? (
+        <>
+          <p className="section-label mb-2">Forberedelser</p>
+          <h2 className="font-serif text-3xl font-semibold">Pakkeliste</h2>
+        </>
+      ) : null}
       {categories.length > 0 ? (
-        <div className="mt-8 grid gap-8 md:grid-cols-3">
+        <div className={`grid gap-8 md:grid-cols-3 ${hideHeader ? "" : "mt-8"}`}>
           {categories.map((category) => (
             <div key={category.title} className="space-y-3">
               <h3 className="text-sm font-semibold uppercase tracking-[0.12em]">
