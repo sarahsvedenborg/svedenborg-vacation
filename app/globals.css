@@ -1,26 +1,41 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fefefe;
+  --foreground: #0f172a;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-body);
+  --font-heading: var(--font-heading);
+  --color-canal: #2e6f95;
+  --color-softgreen: #94bca0;
+  --color-cream: #fefefe;
+  --color-card: #f7fbff;
+  --color-card-alt: #f8fcf8;
 }
 
 body {
-  background: var(--background);
+  background:
+    radial-gradient(circle at 10% 0%, #f5faff 0%, transparent 38%),
+    radial-gradient(circle at 90% 10%, #f7fcf7 0%, transparent 36%),
+    var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), Arial, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading), Arial, sans-serif;
+}
+
+.card {
+  @apply rounded-xl border border-sky-100/80 bg-[color:var(--color-card)] p-4;
+}
+
+.card:nth-child(even) {
+  background: var(--color-card-alt);
 }
