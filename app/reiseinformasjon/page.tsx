@@ -14,12 +14,12 @@ export default async function ReiseinformasjonPage() {
       />
 
       <div className="itinerary">
-        <FlightLeg label="Utreise" title="Fly til" flight={travel.flightTo} />
-        <TransportLeg label="Ankomst" title="Transport til" transport={travel.transportTo} />
+        <FlightLeg label="Utreise" title="Avreise" flight={travel.flightTo} />
+        <TransportLeg label="Ankomst" title="Fra flyplass til kanalbåt" transport={travel.transportTo} />
         <SpecialTravelLeg text={travel.sarahOgAmelieReise} />
         <BaggageLeg items={travel.baggage ?? []} />
-        <FlightLeg label="Hjemreise" title="Fly fra" flight={travel.flightFrom} />
-        <TransportLeg label="Avreise" title="Transport fra" transport={travel.transportFrom} />
+        <FlightLeg label="Hjemreise" title="Hjemreise" flight={travel.flightFrom} />
+        <TransportLeg label="Avreise" title="Fra kanalbåt til flyplass" transport={travel.transportFrom} />
       </div>
     </div>
   );
