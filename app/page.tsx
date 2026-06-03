@@ -21,30 +21,43 @@ export default async function Home() {
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-black/25" />
-          <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center text-white">
-            <p className="section-label mb-4 text-white/80">Juli 2026</p>
-            <h1 className="font-serif text-4xl font-medium leading-tight md:text-6xl lg:text-7xl">
-              {settings.title}
-            </h1>
-            <p className="mt-4 max-w-lg text-xs uppercase tracking-[0.2em] text-white/90 md:text-sm">
-              {settings.route}
-            </p>
-            <Link href="/reiseinformasjon" className="btn-primary mt-8 border-white text-white hover:bg-white hover:text-foreground">
-              Start reisen
-            </Link>
+          <div className="absolute inset-0 flex flex-col">
+            <div className="flex flex-1 flex-col items-center justify-center px-6 text-center text-white">
+              <p className="section-label mb-4 text-white/80">Juli 2026</p>
+              <h1 className="font-serif text-4xl font-medium leading-tight md:text-6xl lg:text-7xl">
+                {settings.title}
+              </h1>
+              <p className="mt-4 max-w-lg text-xs uppercase tracking-[0.2em] text-white/90 md:text-sm">
+                {settings.route}
+              </p>
+              <Link
+                href="/reiseinformasjon"
+                className="btn-primary mt-8 border-white text-white hover:bg-white hover:text-foreground"
+              >
+                REISEINFO - FLY
+              </Link>
+            </div>
+            <div className="border-t border-white/20 bg-black/35 px-6 py-5 backdrop-blur-sm">
+              <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center md:flex-row md:justify-between md:gap-8 md:text-left">
+                <div className="space-y-1">
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-white/75">
+                    Reisedatoer
+                  </p>
+                  <p className="font-serif text-xl font-medium text-white md:text-2xl">
+                    {settings.tripDates}
+                  </p>
+                  <p className="text-sm text-white/85">{settings.travelers}</p>
+                </div>
+                <Countdown targetDate={settings.countdownDate} variant="overlay" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-2xl space-y-4 text-center">
-        <p className="text-base font-medium text-text-body">{settings.tripDates}</p>
-        <p className="text-base font-medium">{settings.travelers}</p>
-        <Countdown targetDate={settings.countdownDate} />
-      </section>
-
       <section className="space-y-8">
         <div className="text-center">
-          <p className="section-label mb-2">Før avreise</p>
+          {/* <p className="section-label mb-2">Før avreise</p> */}
           <h2 className="font-serif text-3xl font-medium md:text-4xl">Raske fakta</h2>
         </div>
         <div className="grid gap-px border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
@@ -61,7 +74,7 @@ export default async function Home() {
 
       <section className="space-y-8">
         <div className="text-center">
-          <p className="section-label mb-2">Underveis</p>
+          {/* <p className="section-label mb-2">Underveis</p> */}
           <h2 className="font-serif text-3xl font-medium md:text-4xl">Reisens høydepunkter</h2>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -75,7 +88,7 @@ export default async function Home() {
 
       <section className="space-y-8">
         <div className="text-center">
-          <p className="section-label mb-2">Nyheter</p>
+          {/*  <p className="section-label mb-2">Nyheter</p> */}
           <h2 className="font-serif text-3xl font-medium md:text-4xl">Siste oppdateringer</h2>
         </div>
         <div className="divide-y divide-border">
@@ -97,8 +110,8 @@ export default async function Home() {
                   <span className="text-sm text-muted">Uten dato</span>
                 )}
                 <div className="space-y-2">
-                <h3 className="font-serif text-2xl font-medium">{update.title}</h3>
-                <p className="text-body">{update.content}</p>
+                  <h3 className="font-serif text-2xl font-medium">{update.title}</h3>
+                  <p className="text-body">{update.content}</p>
                 </div>
               </article>
             );
