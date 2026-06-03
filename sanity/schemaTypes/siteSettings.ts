@@ -26,6 +26,23 @@ export const siteSettings = defineType({
     }),
     defineField({ name: "countdownDate", title: "Nedtellingsdato", type: "datetime" }),
     defineField({
+      name: "exploreActivityLinks",
+      title: "Utforsk aktiviteter (lenker)",
+      description: "Vises på siden Se og gjøre, under overskriften.",
+      type: "array",
+      of: [
+        defineArrayMember({
+          type: "object",
+          name: "exploreActivityLink",
+          title: "Lenke",
+          fields: [
+            defineField({ name: "label", title: "Tekst", type: "string" }),
+            defineField({ name: "url", title: "URL", type: "url" }),
+          ],
+        }),
+      ],
+    }),
+    defineField({
       name: "quickFacts",
       title: "Raske fakta",
       type: "array",

@@ -9,6 +9,8 @@ import {
   travelInformation as travelInformationFallback,
   updates,
   type Attraction,
+  exploreActivityLinksFallback,
+  type ExploreActivityLink,
   type QuickFact,
   type SiteSettingsData,
 } from "./site-data";
@@ -19,6 +21,7 @@ type SanitySiteSettings = Partial<
   heroImage?: { asset?: { _ref?: string } };
   heroImageAlt?: string;
   quickFacts?: QuickFact[];
+  exploreActivityLinks?: ExploreActivityLink[];
 };
 
 async function safeFetch<T>(query: string, fallback: T): Promise<T> {
@@ -139,7 +142,23 @@ function mergeSiteSettings(data: SanitySiteSettings | null): SiteSettingsData {
       data.quickFacts && data.quickFacts.length > 0
         ? data.quickFacts
         : siteSettingsFallback.quickFacts,
+    exploreActivityLinks:
+      data.exploreActivityLinks && data.exploreActivityLinks.length > 0
+        ? data.exploreActivityLinks
+        : siteSettingsFallback.exploreActivityLinks,
   };
+}
+
+export async function getExploreActivityLinks(): Promise<ExploreActivityLink[]> {
+  try {
+    const data = await client.fetch<ExploreActivityLink[] | null>(
+      `*[_type == "siteSettings"] | order(_updatedAt desc)[0].exploreActivityLinks[]{label, url}`
+    );
+    if (!data || data.length === 0) return exploreActivityLinksFallback;
+    return data;
+  } catch {
+    return exploreActivityLinksFallback;
+  }
 }
 
 export async function getSiteSettings(): Promise<SiteSettingsData> {
@@ -153,7 +172,8 @@ export async function getSiteSettings(): Promise<SiteSettingsData> {
         countdownDate,
         heroImage,
         "heroImageAlt": heroImage.alt,
-        quickFacts[]{title, text}
+        quickFacts[]{title, text},
+        exploreActivityLinks[]{label, url}
       }`
     );
     if (!data?.title && !data?.heroImage) return siteSettingsFallback;

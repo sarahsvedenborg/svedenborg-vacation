@@ -13,6 +13,13 @@
       { "title": "Reisetid", "text": "7-8 dager i rolig tempo" },
       { "title": "Flyplass", "text": "Manchester Airport (MAN)" },
       { "title": "Nødkontakt", "text": "+44 1948 662 533" }
+    ],
+    "exploreActivityLinks": [
+      { "label": "Visit Llangollen", "url": "https://www.visitwales.com/destinations/north-wales/llangollen" },
+      { "label": "Pontcysyllte Aqueduct (UNESCO)", "url": "https://www.visitwrexham.co.uk/things-to-do/pontcysyllte-aqueduct" },
+      { "label": "Llangollen Railway", "url": "https://www.llangollen-railway.co.uk/" },
+      { "label": "Canal & River Trust", "url": "https://canalrivertrust.org.uk/" },
+      { "label": "Aktiviteter i Denbighshire", "url": "https://www.denbighshire.gov.uk/en/visitor-information" }
     ]
   },
   {

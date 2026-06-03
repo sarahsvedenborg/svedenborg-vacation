@@ -1,5 +1,7 @@
 export type QuickFact = { title: string; text: string };
 
+export type ExploreActivityLink = { label: string; url: string };
+
 export type SiteSettingsData = {
   title: string;
   route: string;
@@ -9,7 +11,16 @@ export type SiteSettingsData = {
   heroImageUrl: string;
   heroImageAlt: string;
   quickFacts: QuickFact[];
+  exploreActivityLinks: ExploreActivityLink[];
 };
+
+export const exploreActivityLinksFallback: ExploreActivityLink[] = [
+  { label: "Visit Llangollen", url: "https://www.visitwales.com/destinations/north-wales/llangollen" },
+  { label: "Pontcysyllte Aqueduct (UNESCO)", url: "https://www.visitwrexham.co.uk/things-to-do/pontcysyllte-aqueduct" },
+  { label: "Llangollen Railway", url: "https://www.llangollen-railway.co.uk/" },
+  { label: "Canal & River Trust", url: "https://canalrivertrust.org.uk/" },
+  { label: "Aktiviteter i Denbighshire", url: "https://www.denbighshire.gov.uk/en/visitor-information" },
+];
 
 export const emergencyContact = "+44 1948 662 533";
 
@@ -31,6 +42,7 @@ export const siteSettings: SiteSettingsData = {
     { title: "Flyplass", text: "Manchester Airport (MAN)" },
     { title: "Nødkontakt", text: emergencyContact },
   ],
+  exploreActivityLinks: exploreActivityLinksFallback,
 };
 
 export const highlights = [
