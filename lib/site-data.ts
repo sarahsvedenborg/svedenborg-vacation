@@ -65,17 +65,108 @@ export const itinerary = [
   { dayNumber: 7, title: "Tilbake ved marina", description: "Pakking, opprydding og siste familiebilde." },
 ];
 
-export const attractions = [
-  { title: "Pontcysyllte-akvedukten", description: "UNESCO-område og spektakulær kanalbro over elven.", location: "Trevor Basin", familyFriendly: 5 },
-  { title: "Chirk-akvedukten", description: "Klassisk britisk ingeniørkunst med nydelig utsikt.", location: "Chirk", familyFriendly: 4 },
-  { title: "Llangollen sentrum", description: "Koselige butikker, kafeer og promenade.", location: "Llangollen", familyFriendly: 5 },
-  { title: "Horseshoe Falls", description: "Fin gåtur langs vannet, perfekt for piknik.", location: "Llangollen", familyFriendly: 5 },
-  { title: "Llangollen Railway", description: "Veterantog med kort og barnevennlig rute.", location: "Llangollen", familyFriendly: 5 },
-  { title: "Plas Newydd House", description: "Historisk hus med hager og familievennlig omvisning.", location: "Llangollen", familyFriendly: 4 },
-  { title: "Grindley Brook Locks", description: "Spennende slusetrapp med god plass til pause.", location: "Grindley Brook", familyFriendly: 4 },
-  { title: "Trevor Basin", description: "Startpunkt for akvedukt-turer og kanalhistorie.", location: "Trevor", familyFriendly: 4 },
-  { title: "Canal Wildlife Spotting", description: "Se svaner, hegrer, ender og sauer langs kanalen.", location: "Hele ruten", familyFriendly: 5 },
-  { title: "Whitchurch Heritage Walk", description: "Kort historisk runde med lett terreng.", location: "Whitchurch", familyFriendly: 3 },
+export type Attraction = {
+  title: string;
+  description: string;
+  location: string;
+  familyFriendly: number;
+  imageUrl?: string | null;
+  imageAlt?: string | null;
+  moreInfoUrl?: string | null;
+  additionalUrl?: string | null;
+};
+
+export const attractions: Attraction[] = [
+  {
+    title: "Pontcysyllte-akvedukten",
+    description: "UNESCO-område og spektakulær kanalbro over elven.",
+    location: "Trevor Basin",
+    familyFriendly: 5,
+    imageUrl: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Pontcysyllte-akvedukten",
+    moreInfoUrl: "https://www.visitwrexham.co.uk/things-to-do/pontcysyllte-aqueduct",
+  },
+  {
+    title: "Chirk-akvedukten",
+    description: "Klassisk britisk ingeniørkunst med nydelig utsikt.",
+    location: "Chirk",
+    familyFriendly: 4,
+    imageUrl: "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Chirk-akvedukten",
+    moreInfoUrl: "https://en.wikipedia.org/wiki/Chirk_Aqueduct",
+  },
+  {
+    title: "Llangollen sentrum",
+    description: "Koselige butikker, kafeer og promenade.",
+    location: "Llangollen",
+    familyFriendly: 5,
+    imageUrl: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Llangollen sentrum",
+    moreInfoUrl: "https://www.visitwales.com/destinations/north-wales/llangollen",
+  },
+  {
+    title: "Horseshoe Falls",
+    description: "Fin gåtur langs vannet, perfekt for piknik.",
+    location: "Llangollen",
+    familyFriendly: 5,
+    imageUrl: "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Horseshoe Falls",
+    moreInfoUrl: "https://en.wikipedia.org/wiki/Horseshoe_Falls,_Wales",
+  },
+  {
+    title: "Llangollen Railway",
+    description: "Veterantog med kort og barnevennlig rute.",
+    location: "Llangollen",
+    familyFriendly: 5,
+    imageUrl: "https://images.unsplash.com/photo-1474511320723-9a752ddbc88e?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Llangollen Railway",
+    moreInfoUrl: "https://www.llangollen-railway.co.uk/",
+  },
+  {
+    title: "Plas Newydd House",
+    description: "Historisk hus med hager og familievennlig omvisning.",
+    location: "Llangollen",
+    familyFriendly: 4,
+    imageUrl: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Plas Newydd House",
+    moreInfoUrl: "https://www.plasnewyddllangollen.co.uk/",
+  },
+  {
+    title: "Grindley Brook Locks",
+    description: "Spennende slusetrapp med god plass til pause.",
+    location: "Grindley Brook",
+    familyFriendly: 4,
+    imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Grindley Brook Locks",
+    moreInfoUrl: "https://canalrivertrust.org.uk/",
+  },
+  {
+    title: "Trevor Basin",
+    description: "Startpunkt for akvedukt-turer og kanalhistorie.",
+    location: "Trevor",
+    familyFriendly: 4,
+    imageUrl: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Trevor Basin",
+    moreInfoUrl: "https://www.pontcysyllte-aqueduct.co.uk/",
+  },
+  {
+    title: "Canal Wildlife Spotting",
+    description: "Se svaner, hegrer, ender og sauer langs kanalen.",
+    location: "Hele ruten",
+    familyFriendly: 5,
+    imageUrl: "https://images.unsplash.com/photo-1552728080-bcad9a938f9d?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Kanalens dyreliv",
+    moreInfoUrl: "https://canalrivertrust.org.uk/enjoy-the-waterways/canal-wildlife",
+  },
+  {
+    title: "Whitchurch Heritage Walk",
+    description: "Kort historisk runde med lett terreng.",
+    location: "Whitchurch",
+    familyFriendly: 3,
+    imageUrl: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Whitchurch",
+    moreInfoUrl: "https://www.visitshropshire.co.uk/whitchurch",
+  },
 ];
 
 export const restaurants = [

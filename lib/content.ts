@@ -8,6 +8,7 @@ import {
   siteSettings as siteSettingsFallback,
   travelInformation as travelInformationFallback,
   updates,
+  type Attraction,
   type QuickFact,
   type SiteSettingsData,
 } from "./site-data";
@@ -48,11 +49,36 @@ export function getItinerary() {
   );
 }
 
-export function getAttractions() {
-  return safeFetch(
-    `*[_type == "attraction"] | order(featured desc, title asc){title, description, location, familyFriendly}`,
+const attractionsFallbackByTitle = Object.fromEntries(
+  attractions.map((item) => [item.title, item])
+);
+
+function mergeAttraction(item: Attraction): Attraction {
+  const fallback = attractionsFallbackByTitle[item.title];
+  return {
+    ...item,
+    imageUrl: item.imageUrl ?? fallback?.imageUrl ?? null,
+    imageAlt: item.imageAlt ?? fallback?.imageAlt ?? item.title,
+    moreInfoUrl: item.moreInfoUrl ?? fallback?.moreInfoUrl ?? null,
+    additionalUrl: item.additionalUrl ?? fallback?.additionalUrl ?? null,
+  };
+}
+
+export async function getAttractions() {
+  const data = await safeFetch(
+    `*[_type == "attraction"] | order(featured desc, title asc){
+      title,
+      description,
+      location,
+      familyFriendly,
+      moreInfoUrl,
+      additionalUrl,
+      "imageUrl": images[0].asset->url,
+      "imageAlt": coalesce(images[0].alt, title)
+    }`,
     attractions
   );
+  return data.map(mergeAttraction);
 }
 
 export function getRestaurants() {
