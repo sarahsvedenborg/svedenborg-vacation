@@ -10,7 +10,7 @@ export default async function ReiseinformasjonPage() {
       <PageHeader
         label="Reiseplan"
         title="Reiseinformasjon"
-        lead="Din komplette reiserute — fly, transport og bagasje for kanalferien."
+        lead="Norge - Manchester - Whitchurch Marina - Llangollen - og hjem igjen"
       />
 
       <div className="itinerary">

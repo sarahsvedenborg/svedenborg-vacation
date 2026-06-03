@@ -12,6 +12,9 @@ export type SiteSettingsData = {
   heroImageAlt: string;
   foodHeaderImageUrl: string;
   foodHeaderImageAlt: string;
+  foodPageLinkIntro: string | null;
+  foodPageLinkUrl: string | null;
+  foodPageLinkLabel: string | null;
   quickFacts: QuickFact[];
   exploreActivityLinks: ExploreActivityLink[];
 };
@@ -38,6 +41,9 @@ export const siteSettings: SiteSettingsData = {
   foodHeaderImageUrl:
     "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80",
   foodHeaderImageAlt: "Glutenfritt brød og frokost",
+  foodPageLinkIntro: "Nyttig oversikt over glutenfri mat og reise i Storbritannia.",
+  foodPageLinkUrl: "https://www.coeliac.org.uk/information-and-support/living-gluten-free/travel/",
+  foodPageLinkLabel: "Coeliac UK reiseguide",
   quickFacts: [
     { title: "Startmarina", text: "Whitchurch Marina" },
     { title: "Sluttmarina", text: "Whitchurch Marina" },
@@ -247,6 +253,7 @@ export type TravelInformationData = {
   transportFrom: TransportInfo | null;
   sarahOgAmelieReise: string | null;
   baggage: BaggageItem[];
+  packingIntro: string | null;
   packingCategories: PackingCategory[];
 };
 
@@ -284,6 +291,8 @@ export const travelInformation: TravelInformationData = {
     { title: "Stor koffert", dimensions: "75 x 50 x 30 cm" },
     { title: "Håndbagasje", dimensions: "55 x 40 x 23 cm" },
   ],
+  packingIntro:
+    "Pakking skjer i myke bager og kofferter som passer inn i båtens begrensede plass. Merk egen bagasje med navn, og ta med det viktigste i håndbagasjen.",
   packingCategories: [
     {
       title: "Essensielt",
@@ -297,5 +306,27 @@ export const travelInformation: TravelInformationData = {
       title: "Livet om bord",
       items: ["Drikkeflaske", "Powerbank", "Solbriller"],
     },
+  ],
+};
+
+export type BoatInformationData = {
+  boatViewUrl: string | null;
+  headerImageUrl: string;
+  headerImageAlt: string;
+  keyFeatures: QuickFact[];
+};
+
+export const boatInformation: BoatInformationData = {
+  boatViewUrl: null,
+  headerImageUrl:
+    "https://images.unsplash.com/photo-1598036597324-41922656e444?auto=format&fit=crop&w=800&q=80",
+  headerImageAlt: "Smalbåt på kanalen",
+  keyFeatures: [
+    { title: "Lengde", text: "Ca. 18 meter" },
+    { title: "Soveplasser", text: "6 faste + ekstra ved behov" },
+    { title: "Styring", text: "Ror og enkel manøvrering i rolig tempo" },
+    { title: "Sluser", text: "Elektrisk eller manuell — vi tar det sammen" },
+    { title: "Strøm", text: "230V om bord når båten er koblet til landstrøm" },
+    { title: "Vann", text: "Tanker fylles ved marinaer underveis" },
   ],
 };

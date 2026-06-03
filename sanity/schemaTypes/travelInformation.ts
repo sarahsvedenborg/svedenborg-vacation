@@ -69,6 +69,13 @@ export const travelInformation = defineType({
       ],
     }),
     defineField({
+      name: "packingIntro",
+      title: "Infoboks (pakkeliste)",
+      description: "Vises over kategoriene på pakkeliste-siden.",
+      type: "text",
+      rows: 4,
+    }),
+    defineField({
       name: "packingCategories",
       title: "Pakkeliste",
       type: "array",

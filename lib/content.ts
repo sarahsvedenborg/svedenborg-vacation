@@ -5,6 +5,7 @@ import {
   faqs,
   itinerary,
   restaurants,
+  boatInformation as boatInformationFallback,
   siteSettings as siteSettingsFallback,
   travelInformation as travelInformationFallback,
   updates,
@@ -12,6 +13,7 @@ import {
   exploreActivityLinksFallback,
   type ExploreActivityLink,
   type QuickFact,
+  type BoatInformationData,
   type SiteSettingsData,
 } from "./site-data";
 
@@ -97,6 +99,37 @@ export function getFaqs() {
   return safeFetch(`*[_type == "faq"] | order(_createdAt asc){question, answer}`, faqs);
 }
 
+type SanityBoatInformation = Partial<BoatInformationData> & {
+  headerImage?: { asset?: { _ref?: string } };
+  headerImageAlt?: string;
+};
+
+export async function getBoatInformation(): Promise<BoatInformationData> {
+  const data = await safeFetch<SanityBoatInformation>(
+    `*[_type == "boatInformation"] | order(_updatedAt desc)[0]{
+      boatViewUrl,
+      headerImage,
+      "headerImageAlt": headerImage.alt,
+      keyFeatures[]{title, text}
+    }`,
+    boatInformationFallback
+  );
+
+  const headerImageUrl = data.headerImage
+    ? urlForImage(data.headerImage).width(800).height(600).fit("crop").url()
+    : boatInformationFallback.headerImageUrl;
+
+  return {
+    boatViewUrl: data.boatViewUrl ?? null,
+    headerImageUrl,
+    headerImageAlt: data.headerImageAlt ?? boatInformationFallback.headerImageAlt,
+    keyFeatures:
+      data.keyFeatures && data.keyFeatures.length > 0
+        ? data.keyFeatures
+        : boatInformationFallback.keyFeatures,
+  };
+}
+
 export async function getTravelInformation() {
   const data = await safeFetch(
     `*[_type == "travelInformation"] | order(_updatedAt desc)[0]{
@@ -109,6 +142,7 @@ export async function getTravelInformation() {
       "transportFrom": transportFrom{lines},
       sarahOgAmelieReise,
       baggage[]{title, dimensions},
+      packingIntro,
       packingCategories[]{title, items}
     }`,
     travelInformationFallback
@@ -121,6 +155,7 @@ export async function getTravelInformation() {
     transportFrom: data.transportFrom ?? null,
     sarahOgAmelieReise: data.sarahOgAmelieReise ?? null,
     baggage: data.baggage ?? [],
+    packingIntro: data.packingIntro ?? null,
     packingCategories: data.packingCategories ?? [],
   };
 }
@@ -146,6 +181,9 @@ function mergeSiteSettings(data: SanitySiteSettings | null): SiteSettingsData {
     heroImageAlt: data.heroImageAlt ?? siteSettingsFallback.heroImageAlt,
     foodHeaderImageUrl,
     foodHeaderImageAlt: data.foodHeaderImageAlt ?? siteSettingsFallback.foodHeaderImageAlt,
+    foodPageLinkIntro: data.foodPageLinkIntro ?? siteSettingsFallback.foodPageLinkIntro,
+    foodPageLinkUrl: data.foodPageLinkUrl ?? siteSettingsFallback.foodPageLinkUrl,
+    foodPageLinkLabel: data.foodPageLinkLabel ?? siteSettingsFallback.foodPageLinkLabel,
     quickFacts:
       data.quickFacts && data.quickFacts.length > 0
         ? data.quickFacts
@@ -182,6 +220,9 @@ export async function getSiteSettings(): Promise<SiteSettingsData> {
         "heroImageAlt": heroImage.alt,
         foodHeaderImage,
         "foodHeaderImageAlt": foodHeaderImage.alt,
+        foodPageLinkIntro,
+        foodPageLinkUrl,
+        foodPageLinkLabel,
         quickFacts[]{title, text},
         exploreActivityLinks[]{label, url}
       }`

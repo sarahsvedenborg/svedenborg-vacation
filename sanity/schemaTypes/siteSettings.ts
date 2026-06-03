@@ -32,6 +32,23 @@ export const siteSettings = defineType({
       options: { hotspot: true },
       fields: [{ name: "alt", title: "Bildetekst", type: "string" }],
     }),
+    defineField({
+      name: "foodPageLinkIntro",
+      title: "Infotekst (Mat og glutenfritt)",
+      description: "Vises ved siden av fremhevet lenke under tittelen.",
+      type: "string",
+    }),
+    defineField({
+      name: "foodPageLinkUrl",
+      title: "Fremhevet lenke (Mat og glutenfritt)",
+      description: "URL for knappen under tittelen på Mat og glutenfritt-siden.",
+      type: "url",
+    }),
+    defineField({
+      name: "foodPageLinkLabel",
+      title: "Lenketekst (Mat og glutenfritt)",
+      type: "string",
+    }),
     defineField({ name: "countdownDate", title: "Nedtellingsdato", type: "datetime" }),
     defineField({
       name: "exploreActivityLinks",
