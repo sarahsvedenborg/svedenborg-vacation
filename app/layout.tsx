@@ -1,17 +1,27 @@
 import type { Metadata } from "next";
-import { Manrope, Inter } from "next/font/google";
+import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 
-const heading = Manrope({
-  variable: "--font-heading",
+const serif = Cormorant_Garamond({
+  variable: "--font-serif",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
 });
 
-const body = Inter({
+const body = DM_Sans({
   variable: "--font-body",
   subsets: ["latin"],
 });
+
+const navItems = [
+  { href: "/reiseinformasjon", label: "Reiseinfo" },
+  { href: "/baaten", label: "Båten" },
+  { href: "/rute", label: "Rute" },
+  { href: "/opplevelser", label: "Opplevelser" },
+  { href: "/mat-og-glutenfritt", label: "Mat" },
+  { href: "/noedinfo", label: "Nødinfo" },
+];
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://family-narrowboat.vercel.app"),
@@ -33,27 +43,38 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="no"
-      className={`${heading.variable} ${body.variable} h-full antialiased`}
-    >
-      <body className="min-h-full bg-cream text-slate-900">
-        <header className="sticky top-0 z-30 border-b border-sky-100/80 bg-cream/90 backdrop-blur-md">
-          <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3">
-            <Link href="/" className="font-heading text-lg font-bold text-canal">
-              Kanalferien 2026
+    <html lang="no" className={`${serif.variable} ${body.variable} h-full antialiased`}>
+      <body className="min-h-full bg-background text-foreground">
+        <header className="border-b border-border bg-white">
+          <div className="mx-auto flex w-full max-w-5xl flex-col items-center gap-4 px-6 py-6 md:flex-row md:justify-between">
+            <nav className="flex flex-wrap justify-center gap-5 md:order-1 md:justify-start">
+              {navItems.slice(0, 3).map((item) => (
+                <Link key={item.href} href={item.href} className="nav-link">
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+            <Link
+              href="/"
+              className="font-serif text-2xl font-medium tracking-tight md:order-2"
+            >
+              Kanalferien
             </Link>
-            <nav className="hidden gap-4 text-sm md:flex">
-              <Link href="/reiseinformasjon">Reiseinfo</Link>
-              <Link href="/baaten">Båten</Link>
-              <Link href="/rute">Rute</Link>
-              <Link href="/opplevelser">Opplevelser</Link>
-              <Link href="/mat-og-glutenfritt">Mat</Link>
-              <Link href="/noedinfo">Nødinfo</Link>
+            <nav className="flex flex-wrap justify-center gap-5 md:order-3 md:justify-end">
+              {navItems.slice(3).map((item) => (
+                <Link key={item.href} href={item.href} className="nav-link">
+                  {item.label}
+                </Link>
+              ))}
             </nav>
           </div>
         </header>
-        <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-6">{children}</main>
+        <main className="mx-auto w-full max-w-5xl flex-1 px-6 py-10 md:py-14">{children}</main>
+        <footer className="border-t border-border py-8">
+          <p className="text-center text-xs uppercase tracking-[0.2em] text-muted">
+            Familiekanalferie 2026
+          </p>
+        </footer>
       </body>
     </html>
   );

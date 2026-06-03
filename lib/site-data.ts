@@ -1,4 +1,4 @@
-export type QuickFact = { label: string; value: string };
+export type QuickFact = { title: string; text: string };
 
 export type SiteSettingsData = {
   title: string;
@@ -8,6 +8,7 @@ export type SiteSettingsData = {
   countdownDate: string;
   heroImageUrl: string;
   heroImageAlt: string;
+  quickFacts: QuickFact[];
 };
 
 export const emergencyContact = "+44 1948 662 533";
@@ -21,17 +22,16 @@ export const siteSettings: SiteSettingsData = {
   heroImageUrl:
     "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1600&q=80",
   heroImageAlt: "Llangollen-kanalen",
+  quickFacts: [
+    { title: "Startmarina", text: "Whitchurch Marina" },
+    { title: "Sluttmarina", text: "Whitchurch Marina" },
+    { title: "Rutelengde", text: "Ca. 74 km tur/retur" },
+    { title: "Antall sluser", text: "Rundt 24 sluser" },
+    { title: "Reisetid", text: "7-8 dager i rolig tempo" },
+    { title: "Flyplass", text: "Manchester Airport (MAN)" },
+    { title: "Nødkontakt", text: emergencyContact },
+  ],
 };
-
-export const quickFacts: QuickFact[] = [
-  { label: "Startmarina", value: "Whitchurch Marina" },
-  { label: "Sluttmarina", value: "Whitchurch Marina" },
-  { label: "Rutelengde", value: "Ca. 74 km tur/retur" },
-  { label: "Antall sluser", value: "Rundt 24 sluser" },
-  { label: "Reisetid", value: "7-8 dager i rolig tempo" },
-  { label: "Flyplass", value: "Manchester Airport (MAN)" },
-  { label: "Nødkontakt", value: emergencyContact },
-];
 
 export const highlights = [
   "Pontcysyllte-akvedukten",

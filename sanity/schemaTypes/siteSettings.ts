@@ -1,4 +1,4 @@
-import { defineField, defineType } from "sanity";
+import { defineArrayMember, defineField, defineType } from "sanity";
 
 export const siteSettings = defineType({
   name: "siteSettings",
@@ -25,5 +25,21 @@ export const siteSettings = defineType({
       fields: [{ name: "alt", title: "Bildetekst", type: "string" }],
     }),
     defineField({ name: "countdownDate", title: "Nedtellingsdato", type: "datetime" }),
+    defineField({
+      name: "quickFacts",
+      title: "Raske fakta",
+      type: "array",
+      of: [
+        defineArrayMember({
+          type: "object",
+          name: "quickFact",
+          title: "Fakta",
+          fields: [
+            defineField({ name: "title", title: "Tittel", type: "string" }),
+            defineField({ name: "text", title: "Tekst", type: "string" }),
+          ],
+        }),
+      ],
+    }),
   ],
 });

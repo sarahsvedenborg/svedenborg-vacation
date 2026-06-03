@@ -1,5 +1,20 @@
 [
-  { "_type": "siteSettings", "_id": "site-settings", "title": "Familieeventyr på smalbåt 2026", "tripDates": "10-17 juli 2026", "countdownDate": "2026-07-10T10:00:00Z" },
+  {
+    "_type": "siteSettings",
+    "_id": "site-settings",
+    "title": "Familieeventyr på smalbåt 2026",
+    "tripDates": "10-17 juli 2026",
+    "countdownDate": "2026-07-10T10:00:00Z",
+    "quickFacts": [
+      { "title": "Startmarina", "text": "Whitchurch Marina" },
+      { "title": "Sluttmarina", "text": "Whitchurch Marina" },
+      { "title": "Rutelengde", "text": "Ca. 74 km tur/retur" },
+      { "title": "Antall sluser", "text": "Rundt 24 sluser" },
+      { "title": "Reisetid", "text": "7-8 dager i rolig tempo" },
+      { "title": "Flyplass", "text": "Manchester Airport (MAN)" },
+      { "title": "Nødkontakt", "text": "+44 1948 662 533" }
+    ]
+  },
   {
     "_type": "travelInformation",
     "_id": "travel-information",

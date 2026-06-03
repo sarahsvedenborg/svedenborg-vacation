@@ -23,14 +23,14 @@ export function Countdown({ targetDate }: Props) {
 
   const text = useMemo(
     () =>
-      `${remaining.days} dager, ${remaining.hours} timer og ${remaining.minutes} minutter`,
+      `${remaining.days} dager · ${remaining.hours} timer · ${remaining.minutes} min`,
     [remaining]
   );
 
   return (
-    <div className="border-l-2 border-canal/50 pl-3">
-      <p className="text-sm text-slate-600">Nedtelling til avreise</p>
-      <p className="text-lg font-bold text-canal">{text}</p>
+    <div className="space-y-1">
+      <p className="section-label">Nedtelling til avreise</p>
+      <p className="font-serif text-2xl">{text}</p>
     </div>
   );
 }

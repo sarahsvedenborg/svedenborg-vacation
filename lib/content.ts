@@ -8,11 +8,16 @@ import {
   siteSettings as siteSettingsFallback,
   travelInformation as travelInformationFallback,
   updates,
+  type QuickFact,
   type SiteSettingsData,
 } from "./site-data";
 
-type SanitySiteSettings = Partial<SiteSettingsData> & {
+type SanitySiteSettings = Partial<
+  Omit<SiteSettingsData, "heroImageUrl" | "heroImageAlt">
+> & {
   heroImage?: { asset?: { _ref?: string } };
+  heroImageAlt?: string;
+  quickFacts?: QuickFact[];
 };
 
 async function safeFetch<T>(query: string, fallback: T): Promise<T> {
@@ -27,7 +32,11 @@ async function safeFetch<T>(query: string, fallback: T): Promise<T> {
 
 export function getUpdates() {
   return safeFetch(
-    `*[_type == "update"] | order(publishedAt desc)[0...4]{title, content, "publishedAt": publishedAt[0..9]}`,
+    `*[_type == "update"] | order(publishedAt desc)[0...4]{
+      title,
+      content,
+      "publishedAt": coalesce(publishedAt, _createdAt)
+    }`,
     updates
   );
 }
@@ -100,6 +109,10 @@ function mergeSiteSettings(data: SanitySiteSettings | null): SiteSettingsData {
     countdownDate: data.countdownDate ?? siteSettingsFallback.countdownDate,
     heroImageUrl,
     heroImageAlt: data.heroImageAlt ?? siteSettingsFallback.heroImageAlt,
+    quickFacts:
+      data.quickFacts && data.quickFacts.length > 0
+        ? data.quickFacts
+        : siteSettingsFallback.quickFacts,
   };
 }
 
@@ -113,7 +126,8 @@ export async function getSiteSettings(): Promise<SiteSettingsData> {
         travelers,
         countdownDate,
         heroImage,
-        "heroImageAlt": heroImage.alt
+        "heroImageAlt": heroImage.alt,
+        quickFacts[]{title, text}
       }`
     );
     if (!data?.title && !data?.heroImage) return siteSettingsFallback;

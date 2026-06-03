@@ -1,3 +1,5 @@
+import { PageHeader } from "@/components/page-header";
+
 export default function BaatenPage() {
   const basics = ["Styring", "Sluser", "Vannpåfylling", "Toaletter", "Strøm"];
   const safety = [
@@ -8,9 +10,14 @@ export default function BaatenPage() {
   ];
 
   return (
-    <div className="space-y-6">
-      <h1 className="text-3xl font-bold text-canal">Båten</h1>
-      <section className="card space-y-2">
+    <div className="space-y-10">
+      <PageHeader
+        label="Om bord"
+        title="Båten"
+        lead="Alt du trenger å vite om smalbåten, etikette og sikkerhet."
+      />
+
+      <section className="max-w-prose space-y-4 text-sm leading-relaxed text-foreground/85">
         <p>
           En smalbåt er en lang og smal kanalbåt laget for britiske kanaler. Tempoet er rolig, og alle kan delta i oppgaver om bord.
         </p>
@@ -19,26 +26,26 @@ export default function BaatenPage() {
         </p>
       </section>
 
-      <section className="space-y-3">
-        <h2 className="text-xl font-semibold">Båtens grunnregler</h2>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <section className="space-y-6">
+        <h2 className="font-serif text-2xl">Båtens grunnregler</h2>
+        <div className="grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
           {basics.map((item) => (
-            <div key={item} className="card font-semibold">
+            <div key={item} className="bg-white p-6 text-sm uppercase tracking-[0.12em]">
               {item}
             </div>
           ))}
         </div>
       </section>
 
-      <section className="space-y-3">
-        <h2 className="text-xl font-semibold">Sikkerhetssjekkliste</h2>
-        <div className="grid gap-2">
+      <section className="space-y-4">
+        <h2 className="font-serif text-2xl">Sikkerhetssjekkliste</h2>
+        <ul className="divide-y divide-border">
           {safety.map((item) => (
-            <div key={item} className="card">
+            <li key={item} className="py-4 text-sm">
               {item}
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </section>
     </div>
   );

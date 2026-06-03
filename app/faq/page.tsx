@@ -1,15 +1,17 @@
+import { PageHeader } from "@/components/page-header";
 import { getFaqs } from "@/lib/content";
 
 export default async function FaqPage() {
   const faqs = await getFaqs();
   return (
-    <div className="space-y-6">
-      <h1 className="text-3xl font-bold text-canal">Vanlige spørsmål</h1>
-      <div className="space-y-3">
+    <div className="space-y-10">
+      <PageHeader label="Hjelp" title="Vanlige spørsmål" />
+
+      <div className="divide-y divide-border">
         {faqs.map((faq) => (
-          <article key={faq.question} className="card">
-            <h2 className="font-semibold">{faq.question}</h2>
-            <p>{faq.answer}</p>
+          <article key={faq.question} className="space-y-3 py-8">
+            <h2 className="font-serif text-2xl">{faq.question}</h2>
+            <p className="text-sm leading-relaxed text-foreground/85">{faq.answer}</p>
           </article>
         ))}
       </div>
