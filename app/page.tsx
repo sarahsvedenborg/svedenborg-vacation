@@ -23,7 +23,7 @@ export default async function Home() {
           <div className="absolute inset-0 bg-black/25" />
           <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center text-white">
             <p className="section-label mb-4 text-white/80">Juli 2026</p>
-            <h1 className="font-serif text-4xl font-normal leading-tight md:text-6xl lg:text-7xl">
+            <h1 className="font-serif text-4xl font-medium leading-tight md:text-6xl lg:text-7xl">
               {settings.title}
             </h1>
             <p className="mt-4 max-w-lg text-xs uppercase tracking-[0.2em] text-white/90 md:text-sm">
@@ -37,23 +37,23 @@ export default async function Home() {
       </section>
 
       <section className="mx-auto max-w-2xl space-y-4 text-center">
-        <p className="text-sm text-muted">{settings.tripDates}</p>
-        <p className="text-sm">{settings.travelers}</p>
+        <p className="text-base font-medium text-text-body">{settings.tripDates}</p>
+        <p className="text-base font-medium">{settings.travelers}</p>
         <Countdown targetDate={settings.countdownDate} />
       </section>
 
       <section className="space-y-8">
         <div className="text-center">
           <p className="section-label mb-2">Før avreise</p>
-          <h2 className="font-serif text-3xl md:text-4xl">Raske fakta</h2>
+          <h2 className="font-serif text-3xl font-medium md:text-4xl">Raske fakta</h2>
         </div>
         <div className="grid gap-px border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
           {settings.quickFacts.map((fact, index) => (
             <div key={`${fact.title}-${index}`} className="bg-white p-6">
-              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-muted">
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted">
                 {fact.title}
               </p>
-              <p className="mt-2 font-serif text-lg">{fact.text}</p>
+              <p className="mt-2 font-serif text-xl font-medium">{fact.text}</p>
             </div>
           ))}
         </div>
@@ -62,12 +62,12 @@ export default async function Home() {
       <section className="space-y-8">
         <div className="text-center">
           <p className="section-label mb-2">Underveis</p>
-          <h2 className="font-serif text-3xl md:text-4xl">Reisens høydepunkter</h2>
+          <h2 className="font-serif text-3xl font-medium md:text-4xl">Reisens høydepunkter</h2>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {highlights.map((item) => (
             <div key={item} className="border-b border-border pb-4">
-              <p className="font-serif text-xl">{item}</p>
+              <p className="font-serif text-xl font-medium">{item}</p>
             </div>
           ))}
         </div>
@@ -76,7 +76,7 @@ export default async function Home() {
       <section className="space-y-8">
         <div className="text-center">
           <p className="section-label mb-2">Nyheter</p>
-          <h2 className="font-serif text-3xl md:text-4xl">Siste oppdateringer</h2>
+          <h2 className="font-serif text-3xl font-medium md:text-4xl">Siste oppdateringer</h2>
         </div>
         <div className="divide-y divide-border">
           {updates.map((update, index) => {
@@ -89,7 +89,7 @@ export default async function Home() {
                 {dateLabel ? (
                   <time
                     dateTime={update.publishedAt}
-                    className="font-serif text-lg text-foreground md:text-xl"
+                    className="font-serif text-xl font-medium text-foreground md:text-2xl"
                   >
                     {dateLabel}
                   </time>
@@ -97,8 +97,8 @@ export default async function Home() {
                   <span className="text-sm text-muted">Uten dato</span>
                 )}
                 <div className="space-y-2">
-                  <h3 className="font-serif text-2xl">{update.title}</h3>
-                  <p className="text-sm leading-relaxed text-foreground/85">{update.content}</p>
+                <h3 className="font-serif text-2xl font-medium">{update.title}</h3>
+                <p className="text-body">{update.content}</p>
                 </div>
               </article>
             );

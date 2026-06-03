@@ -22,8 +22,8 @@ export default function FamilienPage() {
               className="aspect-[4/5] w-full object-cover"
             />
             <div>
-              <p className="font-serif text-xl">{person.name}</p>
-              <p className="text-xs uppercase tracking-[0.12em] text-muted">{person.role}</p>
+              <p className="font-serif text-xl font-medium">{person.name}</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.1em] text-muted">{person.role}</p>
             </div>
           </div>
         ))}

@@ -39,7 +39,7 @@ function ItineraryLeg({
         <p className="section-label md:text-center">{label}</p>
       </div>
       <div className="space-y-4">
-        <h2 className="font-serif text-2xl font-medium md:text-3xl">{title}</h2>
+        <h2 className="font-serif text-2xl font-semibold md:text-3xl">{title}</h2>
         {children}
       </div>
     </article>
@@ -84,7 +84,7 @@ export function TransportLeg({
   return (
     <ItineraryLeg icon={<Car className="h-5 w-5" strokeWidth={1.5} />} label={label} title={title}>
       {lines.length > 0 ? (
-        <ul className="space-y-2 text-sm leading-relaxed text-foreground/90">
+        <ul className="space-y-2 text-body">
           {lines.map((line, index) => (
             <li key={`${line}-${index}`} className="flex gap-3">
               <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-foreground/40" />
@@ -107,7 +107,7 @@ export function SpecialTravelLeg({ text }: { text: string | null }) {
       title="Sarah og Amelie reise"
     >
       {text?.trim() ? (
-        <p className="max-w-prose text-sm leading-relaxed text-foreground/90 whitespace-pre-line">
+        <p className="max-w-prose text-body whitespace-pre-line">
           {text}
         </p>
       ) : (
@@ -131,8 +131,8 @@ export function BaggageLeg({ items }: { items: BaggageItem[] }) {
               key={`${item.title}-${index}`}
               className="rounded-lg border border-border bg-white p-4"
             >
-              <p className="font-serif text-lg">{item.title?.trim() || "Uten tittel"}</p>
-              <p className="mt-1 text-sm text-muted">
+              <p className="font-serif text-xl font-medium">{item.title?.trim() || "Uten tittel"}</p>
+              <p className="mt-1 text-base text-text-body">
                 {item.dimensions?.trim() ? item.dimensions : "Dimensjoner ikke oppgitt"}
               </p>
             </div>
@@ -153,16 +153,16 @@ export function PackingLeg({
   return (
     <section className="border-t border-border pt-10">
       <p className="section-label mb-2">Forberedelser</p>
-      <h2 className="font-serif text-3xl font-medium">Pakkeliste</h2>
+      <h2 className="font-serif text-3xl font-semibold">Pakkeliste</h2>
       {categories.length > 0 ? (
         <div className="mt-8 grid gap-8 md:grid-cols-3">
           {categories.map((category) => (
             <div key={category.title} className="space-y-3">
-              <h3 className="text-xs font-medium uppercase tracking-[0.15em]">
+              <h3 className="text-sm font-semibold uppercase tracking-[0.12em]">
                 {category.title?.trim() ? category.title : "Uten tittel"}
               </h3>
               {(category.items ?? []).length > 0 ? (
-                <ul className="space-y-2 text-sm text-foreground/85">
+                <ul className="space-y-2 text-base text-text-body">
                   {category.items.map((item) => (
                     <li key={item} className="border-b border-border/80 pb-2 last:border-0">
                       {item}

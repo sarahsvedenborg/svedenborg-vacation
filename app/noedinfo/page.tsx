@@ -23,8 +23,8 @@ export default function NoedinfoPage() {
             href={link.href}
             className="flex flex-col gap-1 py-6 transition hover:opacity-70 sm:flex-row sm:items-baseline sm:justify-between"
           >
-            <span className="font-serif text-xl">{link.label}</span>
-            <span className="text-sm uppercase tracking-[0.12em]">{link.value}</span>
+            <span className="font-serif text-xl font-medium">{link.label}</span>
+            <span className="text-base font-medium uppercase tracking-[0.1em]">{link.value}</span>
           </a>
         ))}
       </div>

@@ -12,6 +12,7 @@ const serif = Cormorant_Garamond({
 const body = DM_Sans({
   variable: "--font-body",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
 });
 
 const navItems = [
@@ -56,7 +57,7 @@ export default function RootLayout({
             </nav>
             <Link
               href="/"
-              className="font-serif text-2xl font-medium tracking-tight md:order-2"
+              className="font-serif text-2xl font-semibold tracking-tight md:order-2"
             >
               Kanalferien
             </Link>
@@ -71,7 +72,7 @@ export default function RootLayout({
         </header>
         <main className="mx-auto w-full max-w-5xl flex-1 px-6 py-10 md:py-14">{children}</main>
         <footer className="border-t border-border py-8">
-          <p className="text-center text-xs uppercase tracking-[0.2em] text-muted">
+          <p className="text-center text-sm font-medium uppercase tracking-[0.16em] text-muted">
             Familiekanalferie 2026
           </p>
         </footer>

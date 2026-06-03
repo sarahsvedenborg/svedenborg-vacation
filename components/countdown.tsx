@@ -30,7 +30,7 @@ export function Countdown({ targetDate }: Props) {
   return (
     <div className="space-y-1">
       <p className="section-label">Nedtelling til avreise</p>
-      <p className="font-serif text-2xl">{text}</p>
+      <p className="font-serif text-2xl font-medium">{text}</p>
     </div>
   );
 }

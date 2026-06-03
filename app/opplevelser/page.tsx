@@ -10,10 +10,12 @@ export default async function OpplevelserPage() {
       <div className="grid gap-8 sm:grid-cols-2">
         {attractions.map((attraction) => (
           <article key={attraction.title} className="border-b border-border pb-8">
-            <h2 className="font-serif text-2xl">{attraction.title}</h2>
-            <p className="mt-3 text-sm leading-relaxed text-foreground/85">{attraction.description}</p>
-            <p className="mt-3 text-xs uppercase tracking-[0.12em] text-muted">{attraction.location}</p>
-            <p className="mt-1 text-sm">Familievennlig: {"★".repeat(attraction.familyFriendly)}</p>
+            <h2 className="font-serif text-2xl font-medium">{attraction.title}</h2>
+            <p className="mt-3 text-body">{attraction.description}</p>
+            <p className="mt-3 text-sm font-semibold uppercase tracking-[0.1em] text-muted">
+              {attraction.location}
+            </p>
+            <p className="mt-1 text-base">Familievennlig: {"★".repeat(attraction.familyFriendly)}</p>
           </article>
         ))}
       </div>
