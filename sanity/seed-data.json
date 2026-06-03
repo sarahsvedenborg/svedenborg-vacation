@@ -5,6 +5,9 @@
     "title": "Familieeventyr på smalbåt 2026",
     "tripDates": "10-17 juli 2026",
     "countdownDate": "2026-07-10T10:00:00Z",
+    "foodPageLinkIntro": "Nyttig oversikt over glutenfri mat og reise i Storbritannia.",
+    "foodPageLinkUrl": "https://www.coeliac.org.uk/information-and-support/living-gluten-free/travel/",
+    "foodPageLinkLabel": "Coeliac UK reiseguide",
     "quickFacts": [
       { "title": "Startmarina", "text": "Whitchurch Marina" },
       { "title": "Sluttmarina", "text": "Whitchurch Marina" },
@@ -20,6 +23,19 @@
       { "label": "Llangollen Railway", "url": "https://www.llangollen-railway.co.uk/" },
       { "label": "Canal & River Trust", "url": "https://canalrivertrust.org.uk/" },
       { "label": "Aktiviteter i Denbighshire", "url": "https://www.denbighshire.gov.uk/en/visitor-information" }
+    ]
+  },
+  {
+    "_type": "boatInformation",
+    "_id": "boat-information",
+    "boatViewUrl": "https://www.driftwoodboats.co.uk/narrowboat-hire/",
+    "keyFeatures": [
+      { "title": "Lengde", "text": "Ca. 18 meter" },
+      { "title": "Soveplasser", "text": "6 faste + ekstra ved behov" },
+      { "title": "Styring", "text": "Ror og enkel manøvrering i rolig tempo" },
+      { "title": "Sluser", "text": "Elektrisk eller manuell — vi tar det sammen" },
+      { "title": "Strøm", "text": "230V om bord når båten er koblet til landstrøm" },
+      { "title": "Vann", "text": "Tanker fylles ved marinaer underveis" }
     ]
   },
   {
@@ -57,6 +73,7 @@
       { "title": "Stor koffert", "dimensions": "75 x 50 x 30 cm" },
       { "title": "Håndbagasje", "dimensions": "55 x 40 x 23 cm" }
     ],
+    "packingIntro": "Pakking skjer i myke bager og kofferter som passer inn i båtens begrensede plass. Merk egen bagasje med navn, og ta med det viktigste i håndbagasjen.",
     "packingCategories": [
       { "title": "Essensielt", "items": ["Pass", "Reiseforsikring", "Mobil-lader", "Medisiner"] },
       { "title": "Kanal-klær", "items": ["Vanntett jakke", "Gode gåsko", "Varmt lag"] },

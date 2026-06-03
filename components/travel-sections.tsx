@@ -104,7 +104,7 @@ export function SpecialTravelLeg({ text }: { text: string | null }) {
     <ItineraryLeg
       icon={<Users className="h-5 w-5" strokeWidth={1.5} />}
       label="Spesial"
-      title="Sarah og Amelie reise"
+      title="Amélie og Sarahs reise"
     >
       {text?.trim() ? (
         <p className="max-w-prose text-body whitespace-pre-line">
@@ -122,7 +122,7 @@ export function BaggageLeg({ items }: { items: BaggageItem[] }) {
     <ItineraryLeg
       icon={<Luggage className="h-5 w-5" strokeWidth={1.5} />}
       label="Bagasje"
-      title="Tillatte mål"
+      title="Tillatte bagasjemål"
     >
       {items.length > 0 ? (
         <div className="grid gap-4 sm:grid-cols-2">

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { PageHeader } from "@/components/page-header";
 import { getRestaurants, getSiteSettings } from "@/lib/content";
 
@@ -15,6 +16,22 @@ export default async function MatOgGlutenfrittPage() {
         imageUrl={settings.foodHeaderImageUrl}
         imageAlt={settings.foodHeaderImageAlt}
       />
+
+      {settings.foodPageLinkUrl ? (
+        <div className="flex flex-wrap items-center gap-4 border border-border bg-surface px-6 py-5">
+          {settings.foodPageLinkIntro ? (
+            <p className="text-body text-muted">{settings.foodPageLinkIntro}</p>
+          ) : null}
+          <Link
+            href={settings.foodPageLinkUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+          >
+            {settings.foodPageLinkLabel ?? "Åpne lenke"}
+          </Link>
+        </div>
+      ) : null}
 
       <span className="inline-block rounded-full border border-border px-3 py-1 text-[10px] font-medium uppercase tracking-[0.15em]">
         Cøliaki-vennlig

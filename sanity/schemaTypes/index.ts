@@ -1,4 +1,5 @@
 import { attraction } from "./attraction";
+import { boatInformation } from "./boatInformation";
 import { dailyItinerary } from "./dailyItinerary";
 import { faq } from "./faq";
 import { restaurant } from "./restaurant";
@@ -14,4 +15,5 @@ export const schemaTypes = [
   faq,
   update,
   travelInformation,
+  boatInformation,
 ];
