@@ -24,6 +24,7 @@ Kopier `.env.example` til `.env.local` og fyll inn:
 
 - `NEXT_PUBLIC_SANITY_PROJECT_ID`
 - `NEXT_PUBLIC_SANITY_DATASET`
+- `SANITY_API_WRITE_TOKEN` (for skjemaet på `/opplevelser/foresla` — opprett token i sanity.io/manage med skrivetilgang)
 
 ### Seed-data for Sanity
 
