@@ -1,16 +1,19 @@
 import { PageHeader } from "@/components/page-header";
-import { getRestaurants } from "@/lib/content";
+import { getRestaurants, getSiteSettings } from "@/lib/content";
 
 const categories = ["Frokost", "Lunsj", "Middag", "Kafe", "Dagligvarer", "Nødlagre glutenfritt"];
 
 export default async function MatOgGlutenfrittPage() {
-  const restaurants = await getRestaurants();
+  const [restaurants, settings] = await Promise.all([getRestaurants(), getSiteSettings()]);
+
   return (
     <div className="space-y-12">
       <PageHeader
         label="Spisesteder"
         title="Mat og glutenfritt"
         lead="Anbefalinger langs ruten med glutenfri vurdering."
+        imageUrl={settings.foodHeaderImageUrl}
+        imageAlt={settings.foodHeaderImageAlt}
       />
 
       <span className="inline-block rounded-full border border-border px-3 py-1 text-[10px] font-medium uppercase tracking-[0.15em]">

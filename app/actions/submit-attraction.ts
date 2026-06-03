@@ -64,13 +64,13 @@ export async function submitAttraction(
       featured: false,
       familyFriendly: 3,
     });
-
-    revalidatePath("/opplevelser");
-    redirect("/opplevelser");
   } catch {
     return {
       status: "error",
       message: "Noe gikk galt ved lagring. Prøv igjen om litt.",
     };
   }
+
+  revalidatePath("/opplevelser");
+  redirect("/opplevelser");
 }

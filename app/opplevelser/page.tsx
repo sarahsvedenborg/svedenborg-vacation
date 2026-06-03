@@ -120,7 +120,7 @@ export default async function OpplevelserPage() {
 
         <aside className="space-y-8 lg:sticky lg:top-8 lg:self-start">
           <section className="space-y-3">
-            <h2 className="font-serif text-xl font-medium">Nettsider med forslag til aktiviteter</h2>
+            <h2 className="font-serif text-2xl font-medium md:text-3xl">Nettsider med forslag til aktiviteter</h2>
             {exploreListItems.length > 0 ? (
               <LinkList items={exploreListItems} />
             ) : (
@@ -130,7 +130,7 @@ export default async function OpplevelserPage() {
 
           {suggestedListItems.length > 0 ? (
             <section className="space-y-3">
-              <h2 className="font-serif text-xl font-medium leading-snug">
+              <h2 className="font-serif text-2xl font-medium md:text-3xl">
                 Innsendte forslag som mangler bilde
               </h2>
               <LinkList items={suggestedListItems} />

@@ -16,10 +16,12 @@ import {
 } from "./site-data";
 
 type SanitySiteSettings = Partial<
-  Omit<SiteSettingsData, "heroImageUrl" | "heroImageAlt">
+  Omit<SiteSettingsData, "heroImageUrl" | "heroImageAlt" | "foodHeaderImageUrl" | "foodHeaderImageAlt">
 > & {
   heroImage?: { asset?: { _ref?: string } };
   heroImageAlt?: string;
+  foodHeaderImage?: { asset?: { _ref?: string } };
+  foodHeaderImageAlt?: string;
   quickFacts?: QuickFact[];
   exploreActivityLinks?: ExploreActivityLink[];
 };
@@ -130,6 +132,10 @@ function mergeSiteSettings(data: SanitySiteSettings | null): SiteSettingsData {
     ? urlForImage(data.heroImage).width(1600).height(900).fit("crop").url()
     : siteSettingsFallback.heroImageUrl;
 
+  const foodHeaderImageUrl = data.foodHeaderImage
+    ? urlForImage(data.foodHeaderImage).width(800).height(600).fit("crop").url()
+    : siteSettingsFallback.foodHeaderImageUrl;
+
   return {
     title: data.title ?? siteSettingsFallback.title,
     route: data.route ?? siteSettingsFallback.route,
@@ -138,6 +144,8 @@ function mergeSiteSettings(data: SanitySiteSettings | null): SiteSettingsData {
     countdownDate: data.countdownDate ?? siteSettingsFallback.countdownDate,
     heroImageUrl,
     heroImageAlt: data.heroImageAlt ?? siteSettingsFallback.heroImageAlt,
+    foodHeaderImageUrl,
+    foodHeaderImageAlt: data.foodHeaderImageAlt ?? siteSettingsFallback.foodHeaderImageAlt,
     quickFacts:
       data.quickFacts && data.quickFacts.length > 0
         ? data.quickFacts
@@ -172,6 +180,8 @@ export async function getSiteSettings(): Promise<SiteSettingsData> {
         countdownDate,
         heroImage,
         "heroImageAlt": heroImage.alt,
+        foodHeaderImage,
+        "foodHeaderImageAlt": foodHeaderImage.alt,
         quickFacts[]{title, text},
         exploreActivityLinks[]{label, url}
       }`

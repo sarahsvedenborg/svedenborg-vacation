@@ -86,6 +86,18 @@ export default async function Home() {
         </div>
       </section>
 
+      <section className="flex flex-wrap justify-center gap-4">
+        <Link href="/reiseinformasjon" className="btn-primary">
+          Reiseinformasjon
+        </Link>
+        <Link href="/rute" className="btn-primary">
+          Se ruten
+        </Link>
+        <Link href="/mat-og-glutenfritt" className="btn-primary">
+          Mat og glutenfritt
+        </Link>
+      </section>
+
       <section className="space-y-8">
         <div className="text-center">
           {/*  <p className="section-label mb-2">Nyheter</p> */}
@@ -120,14 +132,8 @@ export default async function Home() {
       </section>
 
       <section className="flex flex-wrap justify-center gap-4 border-t border-border pt-10">
-        <Link href="/reiseinformasjon" className="btn-primary">
-          Reiseinformasjon
-        </Link>
-        <Link href="/rute" className="btn-primary">
-          Se ruten
-        </Link>
-        <Link href="/mat-og-glutenfritt" className="btn-primary">
-          Mat og glutenfritt
+        <Link href="/noedinfo" className="btn-primary">
+          Nødinfo
         </Link>
       </section>
     </div>

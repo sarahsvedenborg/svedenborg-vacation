@@ -35,9 +35,10 @@ Importer startinnhold:
 
 ```bash
 npm run sanity:seed:import
+npm run sanity:seed:restaurants
 ```
 
-`sanity/seed-data.json` inneholder eksempeldata for reiserute, FAQ, attraksjoner og restauranter.
+`sanity/seed-data.json` inneholder eksempeldata for reiserute, FAQ, attraksjoner og restauranter. `sanity:seed:restaurants` importerer kun restaurant-dokumentene (samme innhold som `lib/site-data.ts`).
 
 ### Deploy
 

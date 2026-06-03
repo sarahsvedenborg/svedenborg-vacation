@@ -24,6 +24,14 @@ export const siteSettings = defineType({
       options: { hotspot: true },
       fields: [{ name: "alt", title: "Bildetekst", type: "string" }],
     }),
+    defineField({
+      name: "foodHeaderImage",
+      title: "Header-bilde (Mat og glutenfritt)",
+      description: "Vises til høyre for tittelen på siden Mat og glutenfritt.",
+      type: "image",
+      options: { hotspot: true },
+      fields: [{ name: "alt", title: "Bildetekst", type: "string" }],
+    }),
     defineField({ name: "countdownDate", title: "Nedtellingsdato", type: "datetime" }),
     defineField({
       name: "exploreActivityLinks",

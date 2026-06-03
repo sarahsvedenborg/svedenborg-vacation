@@ -18,7 +18,7 @@ export default async function RutePage() {
       </section>
 
       <section className="space-y-6">
-        <h2 className="font-serif text-2xl font-medium">Dag-for-dag plan</h2>
+        <h2 className="font-serif text-2xl font-medium">Dag-for-dag plan (dette er kun et forslag)</h2>
         <div className="divide-y divide-border">
           {itinerary.map((day) => (
             <article key={day.dayNumber} className="grid gap-4 py-8 md:grid-cols-[80px_1fr]">
