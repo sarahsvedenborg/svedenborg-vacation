@@ -65,7 +65,7 @@ export default async function MatOgGlutenfrittPage() {
       />
 
       {settings.foodPageLinkUrl ? (
-        <div className="flex flex-wrap items-center gap-4 border border-border bg-surface px-6 py-5">
+        <div className="info-box">
           {settings.foodPageLinkIntro ? (
             <p className="text-body text-muted">{settings.foodPageLinkIntro}</p>
           ) : null}

@@ -12,7 +12,7 @@ export function AttractionSubmissionForm() {
   const [state, formAction, isPending] = useActionState(submitAttraction, initialState);
 
   return (
-    <section className="space-y-4 border border-border bg-surface p-6">
+    <section className="info-panel">
       <p className="text-body text-muted">
         Forslag publiseres med en gang og vises på opplevelser-siden til et bilde er lagt til i
         Studio.

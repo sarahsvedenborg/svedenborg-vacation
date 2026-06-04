@@ -7,7 +7,11 @@
   --muted: #4d4d4d;
   --border: #d4d4d4;
   --surface: #f7f7f7;
-  --accent: #141414;
+  --accent: #c4784a;
+  --accent-hover: #a86438;
+  --accent-soft: #fdf6f0;
+  --accent-border: #ecd9c8;
+  --accent-muted: #9a6848;
 }
 
 @theme inline {
@@ -20,6 +24,10 @@
   --color-border: var(--border);
   --color-surface: var(--surface);
   --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-border: var(--accent-border);
+  --color-accent-muted: var(--accent-muted);
 }
 
 body {
@@ -60,7 +68,69 @@ h3,
 }
 
 .btn-primary {
-  @apply inline-flex items-center justify-center rounded-full border border-foreground bg-white px-6 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-foreground transition hover:bg-foreground hover:text-white;
+  @apply inline-flex items-center justify-center rounded-full border border-accent bg-accent px-6 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-white transition hover:border-accent-hover hover:bg-accent-hover;
+}
+
+.btn-primary-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid var(--accent);
+  background-color: var(--background);
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.btn-primary-outline:hover {
+  border-color: var(--accent-hover);
+  background-color: var(--accent-soft);
+}
+
+.btn-hero-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid #fff;
+  background-color: transparent;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fff;
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.btn-hero-outline:hover {
+  background-color: #fff;
+  border-color: #fff;
+  color: var(--foreground);
+}
+
+.info-box {
+  @apply flex flex-wrap items-center gap-4 border border-accent-border border-l-4 border-l-accent bg-accent-soft px-6 py-5;
+}
+
+.info-box p.text-muted,
+.info-box .text-muted {
+  color: var(--accent-muted);
+}
+
+.info-panel {
+  @apply space-y-4 border border-accent-border border-l-4 border-l-accent bg-accent-soft p-6;
 }
 
 .nav-link {
@@ -81,7 +151,7 @@ h3,
 }
 
 .itinerary-icon {
-  @apply flex h-12 w-12 items-center justify-center rounded-full border border-border bg-white text-foreground;
+  @apply flex h-12 w-12 items-center justify-center rounded-full border border-accent-border bg-accent-soft text-accent;
 }
 
 .itinerary-meta {

@@ -12,7 +12,7 @@ export function RestaurantSubmissionForm() {
   const [state, formAction, isPending] = useActionState(submitRestaurant, initialState);
 
   return (
-    <section className="space-y-4 border border-border bg-surface p-6">
+    <section className="info-panel">
       <p className="text-body text-muted">
         Forslag publiseres med en gang og vises på mat-siden som et klikkbart kort.
       </p>

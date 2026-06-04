@@ -17,13 +17,13 @@ export default async function BaatenPage() {
       <PageHeader
         label="Om bord"
         title="Båten"
-        lead="Alt du trenger å vite om smalbåten, etikette og sikkerhet."
+        lead="Alt du trenger å vite om kanalbåten."
         imageUrl={boat.headerImageUrl}
         imageAlt={boat.headerImageAlt}
       />
 
       {boat.boatViewUrl ? (
-        <div className="flex flex-wrap items-center gap-4 border border-border bg-surface px-6 py-5">
+        <div className="info-box">
           <p className="text-body text-muted">Vil du utforske båten i tekst, bilder og video?</p>
           <Link
             href={boat.boatViewUrl}

@@ -30,10 +30,7 @@ export default async function Home() {
               <p className="mt-4 max-w-lg text-xs uppercase tracking-[0.2em] text-white/90 md:text-sm">
                 {settings.route}
               </p>
-              <Link
-                href="/reiseinformasjon"
-                className="btn-primary mt-8 border-white text-white hover:bg-white hover:text-foreground"
-              >
+              <Link href="/reiseinformasjon" className="btn-hero-outline mt-8">
                 REISEINFO - FLY
               </Link>
             </div>
@@ -87,13 +84,13 @@ export default async function Home() {
       </section>
 
       <section className="flex flex-wrap justify-center gap-4">
-        <Link href="/reiseinformasjon" className="btn-primary">
+        <Link href="/reiseinformasjon" className="btn-primary-outline">
           Reiseinformasjon
         </Link>
-        <Link href="/rute" className="btn-primary">
+        <Link href="/rute" className="btn-primary-outline">
           Se ruten
         </Link>
-        <Link href="/mat-og-glutenfritt" className="btn-primary">
+        <Link href="/mat-og-glutenfritt" className="btn-primary-outline">
           Mat og glutenfritt
         </Link>
       </section>
@@ -132,7 +129,7 @@ export default async function Home() {
       </section>
 
       <section className="flex flex-wrap justify-center gap-4 border-t border-border pt-10">
-        <Link href="/noedinfo" className="btn-primary">
+        <Link href="/noedinfo" className="btn-primary-outline">
           Nødinfo
         </Link>
       </section>
