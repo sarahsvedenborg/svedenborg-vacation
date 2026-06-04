@@ -80,6 +80,10 @@ export default async function MatOgGlutenfrittPage() {
         </div>
       ) : null}
 
+      <Link href="/mat-og-glutenfritt/foresla" className="btn-primary inline-block">
+        Foreslå et spisested
+      </Link>
+
       {restaurants.length > 0 ? (
         <section className="grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
           {restaurants.map((item, index) => (
