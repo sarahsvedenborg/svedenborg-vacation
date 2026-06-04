@@ -8,6 +8,32 @@
     "foodPageLinkIntro": "Nyttig oversikt over glutenfri mat og reise i Storbritannia.",
     "foodPageLinkUrl": "https://www.coeliac.org.uk/information-and-support/living-gluten-free/travel/",
     "foodPageLinkLabel": "Coeliac UK reiseguide",
+    "tripHighlights": [
+      {
+        "title": "Pontcysyllte-akvedukten",
+        "url": "https://www.visitwrexham.co.uk/things-to-do/pontcysyllte-aqueduct"
+      },
+      {
+        "title": "Chirk-akvedukten",
+        "url": "https://en.wikipedia.org/wiki/Chirk_Aqueduct"
+      },
+      {
+        "title": "Llangollen by",
+        "url": "https://www.visitwales.com/destinations/north-wales/llangollen"
+      },
+      {
+        "title": "Horseshoe Falls",
+        "url": "https://en.wikipedia.org/wiki/Horseshoe_Falls,_Wales"
+      },
+      {
+        "title": "Kanalens dyreliv",
+        "url": "https://canalrivertrust.org.uk/enjoy-the-waterways/canal-wildlife"
+      },
+      {
+        "title": "Kanalpuber",
+        "url": "https://canalrivertrust.org.uk/"
+      }
+    ],
     "quickFacts": [
       { "title": "Startmarina", "text": "Whitchurch Marina" },
       { "title": "Sluttmarina", "text": "Whitchurch Marina" },

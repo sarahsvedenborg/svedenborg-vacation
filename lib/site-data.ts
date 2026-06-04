@@ -2,6 +2,8 @@ export type QuickFact = { title: string; text: string };
 
 export type ExploreActivityLink = { label: string; url: string };
 
+export type TripHighlight = { title: string; url: string | null };
+
 export type SiteSettingsData = {
   title: string;
   route: string;
@@ -16,6 +18,7 @@ export type SiteSettingsData = {
   foodPageLinkUrl: string | null;
   foodPageLinkLabel: string | null;
   quickFacts: QuickFact[];
+  tripHighlights: TripHighlight[];
   exploreActivityLinks: ExploreActivityLink[];
 };
 
@@ -53,17 +56,34 @@ export const siteSettings: SiteSettingsData = {
     { title: "Flyplass", text: "Manchester Airport (MAN)" },
     { title: "Nødkontakt", text: emergencyContact },
   ],
+  tripHighlights: [
+    {
+      title: "Pontcysyllte-akvedukten",
+      url: "https://www.visitwrexham.co.uk/things-to-do/pontcysyllte-aqueduct",
+    },
+    {
+      title: "Chirk-akvedukten",
+      url: "https://en.wikipedia.org/wiki/Chirk_Aqueduct",
+    },
+    {
+      title: "Llangollen by",
+      url: "https://www.visitwales.com/destinations/north-wales/llangollen",
+    },
+    {
+      title: "Horseshoe Falls",
+      url: "https://en.wikipedia.org/wiki/Horseshoe_Falls,_Wales",
+    },
+    {
+      title: "Kanalens dyreliv",
+      url: "https://canalrivertrust.org.uk/enjoy-the-waterways/canal-wildlife",
+    },
+    {
+      title: "Kanalpuber",
+      url: "https://canalrivertrust.org.uk/",
+    },
+  ],
   exploreActivityLinks: exploreActivityLinksFallback,
 };
-
-export const highlights = [
-  "Pontcysyllte-akvedukten",
-  "Chirk-akvedukten",
-  "Llangollen by",
-  "Horseshoe Falls",
-  "Kanalens dyreliv",
-  "Kanalpuber",
-];
 
 export const updates = [
   {

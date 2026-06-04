@@ -13,6 +13,7 @@ import {
   exploreActivityLinksFallback,
   type ExploreActivityLink,
   type QuickFact,
+  type TripHighlight,
   type BoatInformationData,
   type Restaurant,
   type SiteSettingsData,
@@ -26,6 +27,7 @@ type SanitySiteSettings = Partial<
   foodHeaderImage?: { asset?: { _ref?: string } };
   foodHeaderImageAlt?: string;
   quickFacts?: QuickFact[];
+  tripHighlights?: TripHighlight[];
   exploreActivityLinks?: ExploreActivityLink[];
 };
 
@@ -195,6 +197,12 @@ function mergeSiteSettings(data: SanitySiteSettings | null): SiteSettingsData {
       data.quickFacts && data.quickFacts.length > 0
         ? data.quickFacts
         : siteSettingsFallback.quickFacts,
+    tripHighlights: (() => {
+      const items: TripHighlight[] = (data.tripHighlights ?? [])
+        .filter((item) => Boolean(item?.title))
+        .map((item) => ({ title: item.title, url: item.url ?? null }));
+      return items.length > 0 ? items : siteSettingsFallback.tripHighlights;
+    })(),
     exploreActivityLinks:
       data.exploreActivityLinks && data.exploreActivityLinks.length > 0
         ? data.exploreActivityLinks
@@ -231,6 +239,7 @@ export async function getSiteSettings(): Promise<SiteSettingsData> {
         foodPageLinkUrl,
         foodPageLinkLabel,
         quickFacts[]{title, text},
+        tripHighlights[]{title, url},
         exploreActivityLinks[]{label, url}
       }`
     );
