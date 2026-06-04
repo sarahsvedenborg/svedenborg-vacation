@@ -2,7 +2,54 @@ import Link from "next/link";
 import { PageHeader } from "@/components/page-header";
 import { getRestaurants, getSiteSettings } from "@/lib/content";
 
-const categories = ["Frokost", "Lunsj", "Middag", "Kafe", "Dagligvarer", "Nødlagre glutenfritt"];
+function RestaurantCard({
+  name,
+  description,
+  location,
+  notes,
+  url,
+}: {
+  name: string;
+  description: string;
+  location: string | null;
+  notes: string | null;
+  url: string | null;
+}) {
+  const content = (
+    <>
+      <div className="flex items-start justify-between gap-4">
+        <h3 className="font-serif text-xl font-medium">{name}</h3>
+        {url ? (
+          <span className="shrink-0 text-xs font-semibold uppercase tracking-[0.1em] text-muted group-hover:text-foreground">
+            Åpne
+          </span>
+        ) : null}
+      </div>
+      {description ? <p className="mt-2 text-body">{description}</p> : null}
+      {location ? (
+        <p className="mt-2 text-sm font-semibold uppercase tracking-[0.1em] text-muted">
+          {location}
+        </p>
+      ) : null}
+      {notes ? <p className="mt-2 text-base text-text-body">{notes}</p> : null}
+    </>
+  );
+
+  if (url) {
+    return (
+      <Link
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group block bg-white p-6 transition hover:bg-surface"
+      >
+        {content}
+      </Link>
+    );
+  }
+
+  return <article className="bg-white p-6">{content}</article>;
+}
 
 export default async function MatOgGlutenfrittPage() {
   const [restaurants, settings] = await Promise.all([getRestaurants(), getSiteSettings()]);
@@ -12,13 +59,13 @@ export default async function MatOgGlutenfrittPage() {
       <PageHeader
         label="Spisesteder"
         title="Mat og glutenfritt"
-        lead="Anbefalinger langs ruten med glutenfri vurdering."
+        lead="Spisesteder og butikker langs ruten."
         imageUrl={settings.foodHeaderImageUrl}
         imageAlt={settings.foodHeaderImageAlt}
       />
 
       {settings.foodPageLinkUrl ? (
-        <div className="flex flex-wrap items-center gap-4 border border-border bg-surface px-6 py-5">
+        <div className="info-box">
           {settings.foodPageLinkIntro ? (
             <p className="text-body text-muted">{settings.foodPageLinkIntro}</p>
           ) : null}
@@ -33,32 +80,26 @@ export default async function MatOgGlutenfrittPage() {
         </div>
       ) : null}
 
-      <span className="inline-block rounded-full border border-border px-3 py-1 text-[10px] font-medium uppercase tracking-[0.15em]">
-        Cøliaki-vennlig
-      </span>
+      <Link href="/mat-og-glutenfritt/foresla" className="btn-primary inline-block">
+        Foreslå et spisested
+      </Link>
 
-      {categories.map((category) => (
-        <section key={category} className="space-y-6">
-          <h2 className="font-serif text-2xl font-medium">{category}</h2>
-          <div className="grid gap-6 sm:grid-cols-2">
-            {restaurants
-              .filter((item) => item.category === category)
-              .map((item) => (
-                <article key={item.name} className="border-b border-border pb-6">
-                  <h3 className="font-serif text-xl font-medium">{item.name}</h3>
-                  <p className="mt-2 text-body">{item.description}</p>
-                  <p className="mt-2 text-sm font-semibold uppercase tracking-[0.1em] text-muted">
-                    {item.location}
-                  </p>
-                  <p className="mt-1 text-base">Glutenfri: {"★".repeat(item.glutenFreeRating)}</p>
-                  {item.notes ? (
-                    <p className="mt-2 text-base text-text-body">{item.notes}</p>
-                  ) : null}
-                </article>
-              ))}
-          </div>
+      {restaurants.length > 0 ? (
+        <section className="grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+          {restaurants.map((item, index) => (
+            <RestaurantCard
+              key={`${item.name}-${index}`}
+              name={item.name}
+              description={item.description}
+              location={item.location}
+              notes={item.notes}
+              url={item.url}
+            />
+          ))}
         </section>
-      ))}
+      ) : (
+        <p className="text-body text-muted">Ingen spisesteder lagt inn ennå.</p>
+      )}
     </div>
   );
 }

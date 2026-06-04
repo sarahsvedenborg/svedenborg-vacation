@@ -24,7 +24,7 @@ Kopier `.env.example` til `.env.local` og fyll inn:
 
 - `NEXT_PUBLIC_SANITY_PROJECT_ID`
 - `NEXT_PUBLIC_SANITY_DATASET`
-- `SANITY_API_WRITE_TOKEN` (for skjemaet på `/opplevelser/foresla` — opprett token i sanity.io/manage med skrivetilgang)
+- `SANITY_API_WRITE_TOKEN` (for innsendingsskjema på `/opplevelser/foresla` og `/mat-og-glutenfritt/foresla` — opprett token i sanity.io/manage med skrivetilgang)
 - `SITE_PASSWORD` (**påkrevd** for passordport — uten denne er siden låst til `/login`)
 - `SITE_AUTH_SECRET` (valgfritt, anbefalt i produksjon — brukes til å signere auth-cookien)
 - `SITE_PASSWORD_PROTECTION=false` (valgfritt — slår av porten lokalt)

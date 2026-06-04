@@ -68,6 +68,23 @@ export const siteSettings = defineType({
       ],
     }),
     defineField({
+      name: "tripHighlights",
+      title: "Reisens høydepunkter",
+      description: "Vises på forsiden under overskriften «Reisens høydepunkter».",
+      type: "array",
+      of: [
+        defineArrayMember({
+          type: "object",
+          name: "tripHighlight",
+          title: "Høydepunkt",
+          fields: [
+            defineField({ name: "title", title: "Tittel", type: "string" }),
+            defineField({ name: "url", title: "URL", type: "url" }),
+          ],
+        }),
+      ],
+    }),
+    defineField({
       name: "quickFacts",
       title: "Raske fakta",
       type: "array",

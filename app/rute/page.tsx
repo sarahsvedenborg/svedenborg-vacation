@@ -9,12 +9,28 @@ export default async function RutePage() {
 
       <section className="space-y-4">
         <h2 className="font-serif text-2xl font-medium">Interaktivt rutekart</h2>
+        <p className="text-body">
+          Kartet viser rute fra <strong>Whitchurch Marina</strong> (start) til{" "}
+          <strong>Llangollen</strong> (mål). Du kan zoome og flytte kartet i vinduet under.
+        </p>
         <iframe
-          title="Rutekart Whitchurch til Llangollen"
-          src="https://www.google.com/maps?q=Whitchurch+Marina+Llangollen+Canal&output=embed"
-          className="h-80 w-full border border-border"
+          title="Rutekart Whitchurch Marina til Llangollen"
+          src="https://maps.google.com/maps?f=d&saddr=Whitchurch+Marina,+Shropshire,+UK&daddr=Llangollen,+Wales&hl=no&output=embed"
+          className="h-80 w-full border border-border md:h-[28rem]"
           loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          allowFullScreen
         />
+        <p className="text-sm text-muted">
+          <a
+            href="https://www.google.com/maps/dir/Whitchurch+Marina,+Shropshire,+UK/Llangollen,+Wales"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline transition hover:text-foreground"
+          >
+            Åpne ruten i Google Maps
+          </a>
+        </p>
       </section>
 
       <section className="space-y-6">

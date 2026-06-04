@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Countdown } from "@/components/countdown";
-import { highlights } from "@/lib/site-data";
 import { getSiteSettings, getUpdates } from "@/lib/content";
 import { formatPublishedDate } from "@/lib/format-date";
 
@@ -30,10 +29,7 @@ export default async function Home() {
               <p className="mt-4 max-w-lg text-xs uppercase tracking-[0.2em] text-white/90 md:text-sm">
                 {settings.route}
               </p>
-              <Link
-                href="/reiseinformasjon"
-                className="btn-primary mt-8 border-white text-white hover:bg-white hover:text-foreground"
-              >
+              <Link href="/reiseinformasjon" className="btn-hero-outline mt-8">
                 REISEINFO - FLY
               </Link>
             </div>
@@ -78,22 +74,53 @@ export default async function Home() {
           <h2 className="font-serif text-3xl font-medium md:text-4xl">Reisens høydepunkter</h2>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {highlights.map((item) => (
-            <div key={item} className="border-b border-border pb-4">
-              <p className="font-serif text-xl font-medium">{item}</p>
-            </div>
-          ))}
+          {settings.tripHighlights.map((item, index) => {
+            const textClass = "font-serif text-xl font-medium";
+            const linkClass = `${textClass} inline-flex items-center gap-2 transition hover:text-accent`;
+
+            const label = (
+              <>
+                <span>{item.title}</span>
+                <span aria-hidden className="text-accent">
+                  →
+                </span>
+              </>
+            );
+
+            return (
+              <div key={`${item.title}-${index}`} className="border-b border-border pb-4">
+                {item.url ? (
+                  item.url.startsWith("http") ? (
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={linkClass}
+                    >
+                      {label}
+                    </a>
+                  ) : (
+                    <Link href={item.url} className={linkClass}>
+                      {label}
+                    </Link>
+                  )
+                ) : (
+                  <p className={textClass}>{item.title}</p>
+                )}
+              </div>
+            );
+          })}
         </div>
       </section>
 
       <section className="flex flex-wrap justify-center gap-4">
-        <Link href="/reiseinformasjon" className="btn-primary">
+        <Link href="/reiseinformasjon" className="btn-primary-outline">
           Reiseinformasjon
         </Link>
-        <Link href="/rute" className="btn-primary">
+        <Link href="/rute" className="btn-primary-outline">
           Se ruten
         </Link>
-        <Link href="/mat-og-glutenfritt" className="btn-primary">
+        <Link href="/mat-og-glutenfritt" className="btn-primary-outline">
           Mat og glutenfritt
         </Link>
       </section>
@@ -132,7 +159,7 @@ export default async function Home() {
       </section>
 
       <section className="flex flex-wrap justify-center gap-4 border-t border-border pt-10">
-        <Link href="/noedinfo" className="btn-primary">
+        <Link href="/noedinfo" className="btn-primary-outline">
           Nødinfo
         </Link>
       </section>

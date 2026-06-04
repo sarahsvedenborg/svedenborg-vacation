@@ -14,7 +14,7 @@ export default async function PakkelistePage() {
       />
 
       {travel.packingIntro?.trim() ? (
-        <aside className="mb-8 border border-border bg-surface p-6">
+        <aside className="info-panel mb-8">
           <p className="text-body whitespace-pre-line">{travel.packingIntro}</p>
         </aside>
       ) : null}
