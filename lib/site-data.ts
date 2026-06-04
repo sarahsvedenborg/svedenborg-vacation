@@ -192,17 +192,85 @@ export const attractions: Attraction[] = [
   },
 ];
 
-export const restaurants = [
-  { name: "The Boathouse Cafe", category: "Frokost", description: "Eggretter, grøt og glutenfritt brød.", location: "Whitchurch", celiacFriendly: true, glutenFreeRating: 5, notes: "Be om egen brødrister for cøliaki." },
-  { name: "Canal Side Bakery", category: "Frokost", description: "Kaffe, yoghurt og glutenfrie muffins.", location: "Chirk", celiacFriendly: true, glutenFreeRating: 4, notes: "Spør etter fersk batch uten krysskontaminering." },
-  { name: "Llangollen Deli", category: "Lunsj", description: "Salater, supper og glutenfri quiche.", location: "Llangollen", celiacFriendly: true, glutenFreeRating: 5, notes: "Personalet kjenner cøliakibehov godt." },
-  { name: "Towpath Grill", category: "Lunsj", description: "Grillet fisk, poteter og grønnsaker.", location: "Trevor", celiacFriendly: true, glutenFreeRating: 4, notes: "Frityr brukes også til panert mat." },
-  { name: "Bridge Inn", category: "Middag", description: "Klassisk pubmat med allergimeny.", location: "Chirk", celiacFriendly: true, glutenFreeRating: 4, notes: "Informer om cøliaki ved bestilling." },
-  { name: "River Dee Kitchen", category: "Middag", description: "Familierestaurant med glutenfri pasta.", location: "Llangollen", celiacFriendly: true, glutenFreeRating: 5, notes: "Trygg favoritt for hele familien." },
-  { name: "Aquaduct Arms", category: "Middag", description: "Kjøtt, fisk og vegetar med GF-valg.", location: "Pontcysyllte", celiacFriendly: false, glutenFreeRating: 3, notes: "Noen retter kan tilpasses." },
-  { name: "Tea by the Locks", category: "Kafe", description: "Te, juice og glutenfri brownie.", location: "Grindley Brook", celiacFriendly: true, glutenFreeRating: 4, notes: "Sikre alternativer i egen disk." },
-  { name: "Canal Market", category: "Dagligvarer", description: "Basisvarer og glutenfri pasta/knekkebrød.", location: "Whitchurch", celiacFriendly: true, glutenFreeRating: 4, notes: "Bra for proviant før avgang." },
-  { name: "Boots Pharmacy Food Shelf", category: "Nødlagre glutenfritt", description: "Kjeks, barer og små nød-varer.", location: "Llangollen", celiacFriendly: true, glutenFreeRating: 4, notes: "Nyttig hvis dere går tom om bord." },
+export type Restaurant = {
+  name: string;
+  description: string;
+  location: string | null;
+  notes: string | null;
+  url: string | null;
+};
+
+export const restaurants: Restaurant[] = [
+  {
+    name: "The Boathouse Cafe",
+    description: "Eggretter, grøt og glutenfritt brød.",
+    location: "Whitchurch",
+    notes: "Be om egen brødrister for cøliaki.",
+    url: null,
+  },
+  {
+    name: "Canal Side Bakery",
+    description: "Kaffe, yoghurt og glutenfrie muffins.",
+    location: "Chirk",
+    notes: "Spør etter fersk batch uten krysskontaminering.",
+    url: null,
+  },
+  {
+    name: "Llangollen Deli",
+    description: "Salater, supper og glutenfri quiche.",
+    location: "Llangollen",
+    notes: "Personalet kjenner cøliakibehov godt.",
+    url: null,
+  },
+  {
+    name: "Towpath Grill",
+    description: "Grillet fisk, poteter og grønnsaker.",
+    location: "Trevor",
+    notes: "Frityr brukes også til panert mat.",
+    url: null,
+  },
+  {
+    name: "Bridge Inn",
+    description: "Klassisk pubmat med allergimeny.",
+    location: "Chirk",
+    notes: "Informer om cøliaki ved bestilling.",
+    url: null,
+  },
+  {
+    name: "River Dee Kitchen",
+    description: "Familierestaurant med glutenfri pasta.",
+    location: "Llangollen",
+    notes: "Trygg favoritt for hele familien.",
+    url: null,
+  },
+  {
+    name: "Aquaduct Arms",
+    description: "Kjøtt, fisk og vegetar med GF-valg.",
+    location: "Pontcysyllte",
+    notes: "Noen retter kan tilpasses.",
+    url: null,
+  },
+  {
+    name: "Tea by the Locks",
+    description: "Te, juice og glutenfri brownie.",
+    location: "Grindley Brook",
+    notes: "Sikre alternativer i egen disk.",
+    url: null,
+  },
+  {
+    name: "Canal Market",
+    description: "Basisvarer og glutenfri pasta/knekkebrød.",
+    location: "Whitchurch",
+    notes: "Bra for proviant før avgang.",
+    url: null,
+  },
+  {
+    name: "Boots Pharmacy Food Shelf",
+    description: "Kjeks, barer og små nød-varer.",
+    location: "Llangollen",
+    notes: "Nyttig hvis dere går tom om bord.",
+    url: null,
+  },
 ];
 
 export const faqs = [

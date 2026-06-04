@@ -190,11 +190,8 @@
     "_id": "rest-1",
     "name": "The Boathouse Cafe",
     "slug": { "_type": "slug", "current": "the-boathouse-cafe" },
-    "category": "Frokost",
     "description": "Eggretter, grøt og glutenfritt brød.",
     "location": "Whitchurch",
-    "celiacFriendly": true,
-    "glutenFreeRating": 5,
     "notes": "Be om egen brødrister for cøliaki."
   },
   {
@@ -202,11 +199,8 @@
     "_id": "rest-2",
     "name": "Canal Side Bakery",
     "slug": { "_type": "slug", "current": "canal-side-bakery" },
-    "category": "Frokost",
     "description": "Kaffe, yoghurt og glutenfrie muffins.",
     "location": "Chirk",
-    "celiacFriendly": true,
-    "glutenFreeRating": 4,
     "notes": "Spør etter fersk batch uten krysskontaminering."
   },
   {
@@ -214,11 +208,8 @@
     "_id": "rest-3",
     "name": "Llangollen Deli",
     "slug": { "_type": "slug", "current": "llangollen-deli" },
-    "category": "Lunsj",
     "description": "Salater, supper og glutenfri quiche.",
     "location": "Llangollen",
-    "celiacFriendly": true,
-    "glutenFreeRating": 5,
     "notes": "Personalet kjenner cøliakibehov godt."
   },
   {
@@ -226,11 +217,8 @@
     "_id": "rest-4",
     "name": "Towpath Grill",
     "slug": { "_type": "slug", "current": "towpath-grill" },
-    "category": "Lunsj",
     "description": "Grillet fisk, poteter og grønnsaker.",
     "location": "Trevor",
-    "celiacFriendly": true,
-    "glutenFreeRating": 4,
     "notes": "Frityr brukes også til panert mat."
   },
   {
@@ -238,11 +226,8 @@
     "_id": "rest-5",
     "name": "Bridge Inn",
     "slug": { "_type": "slug", "current": "bridge-inn" },
-    "category": "Middag",
     "description": "Klassisk pubmat med allergimeny.",
     "location": "Chirk",
-    "celiacFriendly": true,
-    "glutenFreeRating": 4,
     "notes": "Informer om cøliaki ved bestilling."
   },
   {
@@ -250,11 +235,8 @@
     "_id": "rest-6",
     "name": "River Dee Kitchen",
     "slug": { "_type": "slug", "current": "river-dee-kitchen" },
-    "category": "Middag",
     "description": "Familierestaurant med glutenfri pasta.",
     "location": "Llangollen",
-    "celiacFriendly": true,
-    "glutenFreeRating": 5,
     "notes": "Trygg favoritt for hele familien."
   },
   {
@@ -262,11 +244,8 @@
     "_id": "rest-7",
     "name": "Aquaduct Arms",
     "slug": { "_type": "slug", "current": "aquaduct-arms" },
-    "category": "Middag",
     "description": "Kjøtt, fisk og vegetar med GF-valg.",
     "location": "Pontcysyllte",
-    "celiacFriendly": false,
-    "glutenFreeRating": 3,
     "notes": "Noen retter kan tilpasses."
   },
   {
@@ -274,11 +253,8 @@
     "_id": "rest-8",
     "name": "Tea by the Locks",
     "slug": { "_type": "slug", "current": "tea-by-the-locks" },
-    "category": "Kafe",
     "description": "Te, juice og glutenfri brownie.",
     "location": "Grindley Brook",
-    "celiacFriendly": true,
-    "glutenFreeRating": 4,
     "notes": "Sikre alternativer i egen disk."
   },
   {
@@ -286,11 +262,8 @@
     "_id": "rest-9",
     "name": "Canal Market",
     "slug": { "_type": "slug", "current": "canal-market" },
-    "category": "Dagligvarer",
     "description": "Basisvarer og glutenfri pasta/knekkebrød.",
     "location": "Whitchurch",
-    "celiacFriendly": true,
-    "glutenFreeRating": 4,
     "notes": "Bra for proviant før avgang."
   },
   {
@@ -298,11 +271,8 @@
     "_id": "rest-10",
     "name": "Boots Pharmacy Food Shelf",
     "slug": { "_type": "slug", "current": "boots-pharmacy-food-shelf" },
-    "category": "Nødlagre glutenfritt",
     "description": "Kjeks, barer og små nød-varer.",
     "location": "Llangollen",
-    "celiacFriendly": true,
-    "glutenFreeRating": 4,
     "notes": "Nyttig hvis dere går tom om bord."
   },
   { "_type": "faq", "_id": "faq-1", "question": "Hvordan fungerer sluser?", "answer": "Vi tar det rolig og fordeler roller." },

@@ -14,6 +14,7 @@ import {
   type ExploreActivityLink,
   type QuickFact,
   type BoatInformationData,
+  type Restaurant,
   type SiteSettingsData,
 } from "./site-data";
 
@@ -89,8 +90,14 @@ export async function getAttractions() {
 }
 
 export function getRestaurants() {
-  return safeFetch(
-    `*[_type == "restaurant"] | order(category asc, name asc){name, category, description, location, glutenFreeRating, celiacFriendly, notes}`,
+  return safeFetch<Restaurant[]>(
+    `*[_type == "restaurant"] | order(name asc){
+      name,
+      description,
+      location,
+      notes,
+      "url": coalesce(website, mapLink)
+    }`,
     restaurants
   );
 }
