@@ -11,6 +11,7 @@
     "sanity:deploy": "sanity deploy",
     "sanity:seed:import": "sanity dataset import sanity/seed-data.json production --replace",
     "sanity:seed:restaurants": "node scripts/seed-restaurants.mjs",
+    "sanity:seed:route": "node scripts/seed-route.mjs",
     "sanity:seed:attraction-images": "sanity exec scripts/seed-attraction-images.mjs --with-user-token"
   },
   "dependencies": {

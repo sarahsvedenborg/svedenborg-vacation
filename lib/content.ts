@@ -4,6 +4,7 @@ import {
   attractions,
   faqs,
   itinerary,
+  routeInformation as routeInformationFallback,
   restaurants,
   boatInformation as boatInformationFallback,
   siteSettings as siteSettingsFallback,
@@ -16,8 +17,29 @@ import {
   type TripHighlight,
   type BoatInformationData,
   type Restaurant,
+  type DailyItineraryItem,
+  type RouteInformationData,
   type SiteSettingsData,
 } from "./site-data";
+
+const JOURNEY_ORDER: Record<string, number> = {
+  utreise: 0,
+  hviledag: 1,
+  retur: 2,
+};
+
+function journeySortKey(partofjourney: string | null | undefined): number {
+  if (!partofjourney) return 3;
+  return JOURNEY_ORDER[partofjourney] ?? 3;
+}
+
+function sortItineraryByJourney(items: DailyItineraryItem[]): DailyItineraryItem[] {
+  return [...items].sort((a, b) => {
+    const partDiff = journeySortKey(a.partofjourney) - journeySortKey(b.partofjourney);
+    if (partDiff !== 0) return partDiff;
+    return a.dayNumber - b.dayNumber;
+  });
+}
 
 type SanitySiteSettings = Partial<
   Omit<SiteSettingsData, "heroImageUrl" | "heroImageAlt" | "foodHeaderImageUrl" | "foodHeaderImageAlt">
@@ -52,11 +74,34 @@ export function getUpdates() {
   );
 }
 
-export function getItinerary() {
-  return safeFetch(
-    `*[_type == "dailyItinerary"] | order(dayNumber asc){dayNumber, title, description}`,
+export async function getItinerary(): Promise<DailyItineraryItem[]> {
+  const data = await safeFetch(
+    `*[_type == "dailyItinerary"]{dayNumber, title, description, cruisingTime, info, partofjourney}`,
     itinerary
   );
+  return sortItineraryByJourney(data);
+}
+
+export async function getRouteInformation(): Promise<RouteInformationData> {
+  const data = await safeFetch(
+    `*[_type == "routeInformation"] | order(_updatedAt desc)[0]{
+      intro,
+      routeFacts[]{label, value},
+      cruisingNotesUrl,
+      disclaimer
+    }`,
+    routeInformationFallback
+  );
+
+  return {
+    intro: data.intro ?? routeInformationFallback.intro,
+    routeFacts:
+      data.routeFacts && data.routeFacts.length > 0
+        ? data.routeFacts
+        : routeInformationFallback.routeFacts,
+    cruisingNotesUrl: data.cruisingNotesUrl ?? routeInformationFallback.cruisingNotesUrl,
+    disclaimer: data.disclaimer ?? routeInformationFallback.disclaimer,
+  };
 }
 
 const attractionsFallbackByTitle = Object.fromEntries(

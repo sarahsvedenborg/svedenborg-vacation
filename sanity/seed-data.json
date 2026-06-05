@@ -106,11 +106,6 @@
       { "title": "Livet om bord", "items": ["Drikkeflaske", "Powerbank", "Solbriller"] }
     ]
   },
-  { "_type": "dailyItinerary", "_id": "day-1", "title": "Whitchurch -> Grindley Brook", "dayNumber": 1, "description": "Rolig start med første sluser." },
-  { "_type": "dailyItinerary", "_id": "day-2", "title": "Mot Chirk", "dayNumber": 2, "description": "Kort etappe med lunsjpause." },
-  { "_type": "dailyItinerary", "_id": "day-3", "title": "Pontcysyllte", "dayNumber": 3, "description": "Passering av akvedukten." },
-  { "_type": "dailyItinerary", "_id": "day-4", "title": "Llangollen", "dayNumber": 4, "description": "Ankomst og byvandring." },
-  { "_type": "dailyItinerary", "_id": "day-5", "title": "Utforsking", "dayNumber": 5, "description": "Valgfri aktivitet i området." },
   {
     "_type": "attraction",
     "_id": "attr-1",
