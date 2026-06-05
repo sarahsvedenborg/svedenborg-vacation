@@ -14,7 +14,7 @@ export function RestaurantSubmissionForm() {
   return (
     <section className="info-panel">
       <p className="text-body text-muted">
-        Forslag publiseres med en gang og vises på mat-siden som et klikkbart kort.
+        Forslag publiseres med en gang og vises på mat-siden som et klikkbart kort. Det kan ta noen minutter.
       </p>
 
       <form action={formAction} className="space-y-4">

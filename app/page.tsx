@@ -9,8 +9,8 @@ export default async function Home() {
 
   return (
     <div className="space-y-16">
-      <section className="relative -mx-6 overflow-hidden md:-mx-6 md:rounded-none">
-        <div className="relative h-[52vh] min-h-[320px] w-full md:h-[70vh]">
+      <section className="relative -mx-6 -mt-10 overflow-hidden md:-mx-6 md:mt-0 md:rounded-none">
+        <div className="relative h-[58vh] min-h-[340px] w-full md:h-[70vh] md:min-h-[320px]">
           <Image
             src={settings.heroImageUrl}
             alt={settings.heroImageAlt}
@@ -26,16 +26,16 @@ export default async function Home() {
               <h1 className="font-serif text-4xl font-medium leading-tight md:text-6xl lg:text-7xl">
                 {settings.title}
               </h1>
-              <p className="mt-4 max-w-lg text-xs uppercase tracking-[0.2em] text-white/90 md:text-sm">
+              <p className="mt-4 hidden max-w-lg text-xs uppercase tracking-[0.2em] text-white/90 md:block md:text-sm">
                 {settings.route}
               </p>
-              <Link href="/reiseinformasjon" className="btn-hero-outline mt-8">
+              <Link href="/reiseinformasjon" className="btn-hero-outline mt-6 md:mt-8">
                 REISEINFO - FLY
               </Link>
             </div>
             <div className="border-t border-white/20 bg-black/35 px-6 py-5 backdrop-blur-sm">
-              <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center md:flex-row md:justify-between md:gap-8 md:text-left">
-                <div className="space-y-1">
+              <div className="mx-auto flex max-w-3xl flex-col items-center justify-center gap-4 text-center md:flex-row md:justify-between md:gap-8 md:text-left">
+                <div className="hidden space-y-1 md:block">
                   <p className="text-xs font-semibold uppercase tracking-[0.14em] text-white/75">
                     Reisedatoer
                   </p>

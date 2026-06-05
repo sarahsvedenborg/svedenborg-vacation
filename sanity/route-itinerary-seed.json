@@ -1,0 +1,108 @@
+[
+  {
+    "_type": "routeInformation",
+    "_id": "route-information",
+    "intro": "Turen passer for deg som vil cruise rolig langs Llangollen-kanalen og utforske både walisisk og engelsk landsbygd.\n\nKanalen er et av de mest populære vassdragene i Europa, med den berømte Pontcysyllte-akvedukten — et spektakulært ingeniørverk. Bygget av Thomas Telford i 1805, er akvedukten 38 meter høy og strekker seg over 300 meter over dalen, med River Dee langt under føttene dine.\n\nChirk-akvedukten er et annet imponerende verk av Telford, 21 meter høy. Ved siden av ligger en viadukt fra 1848, 30 meter høy, for Shrewsbury & Chester-jernbanen.\n\nChirk-tunnelen er 420 meter lang. Etter tunnelen kan du fortøye og gå til Chirk Castle, et 700 år gammelt slott drevet av National Trust.\n\nLlangollen er en pen walisisk by ved kanalens vestlige ende — et hyggelig sted å ligge i opptil 24 timer.",
+    "routeFacts": [
+      {
+        "label": "Anbefalt varighet",
+        "value": "7 netter"
+      },
+      {
+        "label": "Totale seildager",
+        "value": "7"
+      },
+      {
+        "label": "Total seiltid",
+        "value": "27 timer"
+      },
+      {
+        "label": "Total distanse",
+        "value": "61 engelske mil"
+      },
+      {
+        "label": "Antall sluser",
+        "value": "4"
+      },
+      {
+        "label": "Tunneler",
+        "value": "6"
+      },
+      {
+        "label": "Akvedukter",
+        "value": "4"
+      }
+    ],
+    "cruisingNotesUrl": "https://www.driftwoodboats.co.uk/cruising-notes/",
+    "disclaimer": "NB: Denne ruten er kun ment som veiledning. Informasjon kan bli unøyaktig eller utdatert. Sjekk alltid med marinaen at ruten er mulig innenfor tidsrammen, gjeldende værforhold og eventuelle kanalstengninger."
+  },
+  {
+    "_type": "dailyItinerary",
+    "_id": "day-1",
+    "dayNumber": 1,
+    "partofjourney": "utreise",
+    "title": "Whitchurch → Platt Lane (bro 43)",
+    "cruisingTime": "~2 timer",
+    "description": "Henter båten kl. 15:00. Etter innsjekk, pakking og opplæring er det sent på ettermiddagen. Kort cruise for å bli kjent med båten. Moor ved Platt Lane, bro 43.",
+    "info": "Forvent at det er sent — ikke stress, bare bli komfortabel med båten."
+  },
+  {
+    "_type": "dailyItinerary",
+    "_id": "day-2",
+    "dayNumber": 2,
+    "partofjourney": "utreise",
+    "title": "Platt Lane → Hindford / Lion Keys",
+    "cruisingTime": "~7,5 timer",
+    "description": "Fortsett vestover. Snart kommer Whixall Moss, en hevet myr med sjelden flora og fauna — det finnes også gå- og sykkelruter (se informasjon ved bro 44 og 45). Ved bro 45 er det en fin heisebro.\n\nKanalen forgrener seg til venstre, men Prees Branch fører bare til naturreservat og marina — hold høyre.\n\nKanalen krysser mellom England og Wales gjennom et rolig, lite befolket landskap. Ved bro 48 ligger Bettisfield med butikk og vinmonopol. Landskapet blir mer kupert og skogkledd når dere passerer «the Meres» — innsjøer fra istiden. Cole Mere og Blake Mere kommer før Ellesmere, der den største innsjøen kan nås til fots fra bro 57, rett etter Ellesmere-tunnelen.\n\nEllesmere er en travel markedsby fra 1700-tallet med puber, restauranter, butikker og Co-op. Fortøy gjerne på Ellesmere Arm til høyre for å utforske byen — ca. 3,5 timers seiling hit, nok tid til lunsj og innkjøp.\n\nTilbake på hovedkanalen blir landskapet igjen rolig og kanalen svingete. Ved Frankton Junction går Montgomery-kanalen til venstre (krever booking og låseslusevakt 12–14, ring 01606-723800). Fortsett gjennom grønt landskap forbi Hindford Bridge og puben Jack Mytton Inn ved kanalen.\n\nEtter bro 11 kommer de eneste slusene på denne delen av kanalen — to sluser tett på hverandre. Hvis en båt nettopp har passert, er slusen «med dere» og dere kan gå rett inn. Mannskapet bør gå av i god tid med windlass, som vist på opplæringen.\n\nEtter andre sluse kan dere fylle vann til høyre (bruk BW-nøkkelen på nøkkelknippet). Etter bro 15 finnes fine fortøyingsplasser utenfor Lion Keys pub og restaurant, rett før A5 — 20 plasser for gjester, overnatting mulig.\n\nSeiltid fra Platt Lane: ca. 7,5 timer."
+  },
+  {
+    "_type": "dailyItinerary",
+    "_id": "day-3",
+    "dayNumber": 3,
+    "partofjourney": "utreise",
+    "title": "Hindford → Chirk → Pontcysyllte → Llangollen",
+    "cruisingTime": "~6,5 timer",
+    "description": "Dere nærmer dere Chirk. Ved bro 21 kan dere fortøye og gå til Bridge Inn — siste pub i England før Chirk-akvedukten inn i Wales. Sjekk at ingen kommer over akvedukten.\n\nAkvedukten er 21 meter høy, bygget 1796–1801 av Telford og Jessop — en fin øvelse før Pontcysyllte, med River Ceiriog i dalen under og Chirk-viadukt over dere. Ta det rolig over — utsikten er spektakulær.\n\nStraks etter kommer Chirk-tunnelen, over 400 meter og blant de lengste med slepesti. Etter tunnelen kan dere fortøye og utforske Chirk, eller handle inn. Chirk Castle (NT) er områdets hovedattraksjon — et storslått 700 år gammelt festningsverk.\n\nSeiltid fra Jack Mytton Inn: ca. 2,5 timer. Unngå å overnatte her hvis mulig — Cadbury og et sagbruk i nærheten kan støye om natten. Alternativ: Chirk Marina litt lenger frem, med golfklubb, bar og restaurant (ca. £7 for overnatting).\n\nNår kanalen svinger bort fra jernbanen, følger Offas Dyke-stien kanalen. Ved Froncysyllte må dere heise en sjarmerende heisebro med windlass. Stopp gjerne her over natten (Britannia Inn eller Aqueduct Inn) for å bygge mot til Pontcysyllte.\n\nKø kan forekomme ved akvedukten — send noen frem for å sjekke trafikk. Utsikten er fantastisk, men det er 40 meter ned til luft på venstre side; gangsti på høyre.\n\nStraks etter kommer Trevor Wharf. Fortøy her eller sving skarpt til venstre mot Llangollen og puben Telford Inn ved Anglo Welsh-basen.\n\nMellom Trevor og Llangollen er det grunt og smalt — noen steder enkel fil. Hold dere unna bredden der det er grunt. Ca. 3 timers seiling med litt konsentrasjon og reversing, men vel verdt det. Ha mannskap klare til å hoppe av og holde tau ved møte med andre båter. Puben Sun Trevor ligger ved bro 41.\n\nRuinene av Dinas Bran castle på en bratt høyde betyr at Llangollen nærmer seg — nå kommer den smaleste delen, enkel fil med få møteplasser. Send runner frem.\n\nI Llangollen kan dere kjøpe billett (ca. £13) for overnatting i kanalbassenget ved Llangollen Wharf cafe, eller fortøye noen timer til venstre. Bassenget har strøm og vann — fint utgangspunkt for sightseeing.\n\nSeiltid fra Moreton bridge: ca. 4 timer."
+  },
+  {
+    "_type": "dailyItinerary",
+    "_id": "day-4",
+    "dayNumber": 4,
+    "partofjourney": "hviledag",
+    "title": "Utforsk Llangollen",
+    "description": "Llangollen er en pen by med River Dee som fosser gjennom sentrum. Dampsykkelen på Llangollen Railway er verdt en tur til Carrog og tilbake (ca. 13 km spektakulært landskap).\n\nDet finnes mange håndverks- og suvenirbutikker, sjokolade og fudge, kafeer, barer og restauranter."
+  },
+  {
+    "_type": "dailyItinerary",
+    "_id": "day-5",
+    "dayNumber": 5,
+    "partofjourney": "hviledag",
+    "title": "Horseshoe Falls og Chainbridge",
+    "description": "Gå langs slepestien til de vakre Horseshoe Falls, et par mil til kanalens ende. På vei tilbake: pub-lunsj på Chainbridge Hotel med utsikt over River Dee.\n\nValgfritt avstikk: ruiner av Valle Crucis Abbey, et av de mest komplette cistercienserklosterene i Wales, like ved A542. Tilbake på slepestien passerer dere et sjarmerende kanal- og motormuseum."
+  },
+  {
+    "_type": "dailyItinerary",
+    "_id": "day-6",
+    "dayNumber": 6,
+    "partofjourney": "hviledag",
+    "title": "Mer i Llangollen",
+    "description": "Besøk Plas Newydd, et 18. hus som nå er museum (llangollen.com/plas.html). Hver juli arrangeres den internasjonale eisteddfoden her — en verdenskjent musikkfestival."
+  },
+  {
+    "_type": "dailyItinerary",
+    "_id": "day-7",
+    "dayNumber": 7,
+    "partofjourney": "hviledag",
+    "title": "Siste dag i Llangollen",
+    "description": "Rolig dag i Llangollen før returen. Nyt byen, fyll proviant og gjør båten klar for cruise østover igjen."
+  },
+  {
+    "_type": "dailyItinerary",
+    "_id": "day-8",
+    "dayNumber": 8,
+    "partofjourney": "retur",
+    "title": "Retur mot Whitchurch",
+    "cruisingTime": "Varierende",
+    "description": "Nå cruiser dere østover tilbake samme vei. Dere kan enten ta det rolig tilbake til Whitchurch, eller raskt via Chirk til Ellesmere og videre forbi Whitchurch Marina gjennom Grindley-slusene til Wrenbury.\n\nRolig variant: ca. 3,5 timer tilbake til Chirk og fortøy rett etter akvedukten ved Bridge Inn — første pub i England. Gå tilbake til Chirk og følg byens historiske byvandring.\n\nVil dere besøke Chirk Castle først, fortøy rett før Chirk-tunnelen og gå vest (høyre) til slottets port — ca. 20 minutters gange. Slottet fra Edvard I-tiden har familieleiligheter, representasjonsrom, tjenerkvarter og fangekjellere."
+  }
+]

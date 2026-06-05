@@ -98,14 +98,98 @@ export const updates = [
   },
 ];
 
-export const itinerary = [
-  { dayNumber: 1, title: "Whitchurch -> Grindley Brook", description: "Rolig start med første sluser og middag om bord." },
-  { dayNumber: 2, title: "Videre mot Chirk", description: "Lunsjstopp underveis og kveld ved kanalpub." },
-  { dayNumber: 3, title: "Pontcysyllte-akvedukten", description: "Dagens høydepunkt med utsikt over River Dee." },
-  { dayNumber: 4, title: "Ankomst Llangollen", description: "Fortøyning, byvandring og is til barna." },
-  { dayNumber: 5, title: "Utforsk Llangollen", description: "Togtur, fossetur eller rolig dag i sentrum." },
-  { dayNumber: 6, title: "Retur starter", description: "Vend båten og cruise i kortere etapper." },
-  { dayNumber: 7, title: "Tilbake ved marina", description: "Pakking, opprydding og siste familiebilde." },
+export type RouteFact = { label: string; value: string };
+
+export type RouteInformationData = {
+  intro: string | null;
+  routeFacts: RouteFact[];
+  cruisingNotesUrl: string | null;
+  disclaimer: string | null;
+};
+
+export const routeInformation: RouteInformationData = {
+  intro:
+    "Turen passer for deg som vil cruise rolig langs Llangollen-kanalen og utforske både walisisk og engelsk landsbygd.",
+  routeFacts: [
+    { label: "Anbefalt varighet", value: "7 netter" },
+    { label: "Totale seildager", value: "7" },
+    { label: "Total seiltid", value: "27 timer" },
+    { label: "Total distanse", value: "61 engelske mil" },
+    { label: "Antall sluser", value: "4" },
+    { label: "Tunneler", value: "6" },
+    { label: "Akvedukter", value: "4" },
+  ],
+  cruisingNotesUrl: "https://www.driftwoodboats.co.uk/cruising-notes/",
+  disclaimer:
+    "NB: Denne ruten er kun ment som veiledning. Informasjon kan bli unøyaktig eller utdatert. Sjekk alltid med marinaen at ruten er mulig innenfor tidsrammen, gjeldende værforhold og eventuelle kanalstengninger.",
+};
+
+export type JourneyPart = "utreise" | "hviledag" | "retur";
+
+export type DailyItineraryItem = {
+  dayNumber: number;
+  title: string;
+  description: string;
+  cruisingTime?: string | null;
+  info?: string | null;
+  partofjourney?: JourneyPart | null;
+};
+
+export const itinerary: DailyItineraryItem[] = [
+  {
+    dayNumber: 1,
+    partofjourney: "utreise",
+    title: "Whitchurch → Platt Lane (bro 43)",
+    cruisingTime: "~2 timer",
+    description:
+      "Henter båten kl. 15:00. Etter innsjekk, pakking og opplæring er det sent på ettermiddagen. Kort cruise for å bli kjent med båten. Moor ved Platt Lane, bro 43.",
+    info: "Forvent at det er sent — ikke stress, bare bli komfortabel med båten.",
+  },
+  {
+    dayNumber: 2,
+    partofjourney: "utreise",
+    title: "Platt Lane → Hindford / Lion Keys",
+    description:
+      "Lang etappe via Whixall Moss, Bettisfield, Ellesmere og de to slusene før Lion Keys pub ved bro 15. Seiltid fra Platt Lane: ca. 7,5 timer.",
+  },
+  {
+    dayNumber: 3,
+    partofjourney: "utreise",
+    title: "Hindford → Chirk → Pontcysyllte → Llangollen",
+    description:
+      "Chirk-akvedukten og -tunnelen, Froncysyllte, Pontcysyllte-akvedukten og smal kanal inn til Llangollen. Seiltid fra Moreton bridge: ca. 4 timer.",
+  },
+  {
+    dayNumber: 4,
+    partofjourney: "hviledag",
+    title: "Utforsk Llangollen",
+    description: "Byvandring, dampsyltog til Carrog, butikker og restauranter.",
+  },
+  {
+    dayNumber: 5,
+    partofjourney: "hviledag",
+    title: "Horseshoe Falls og Chainbridge",
+    description: "Gåtur langs slepestien til Horseshoe Falls og pub-lunsj ved Chainbridge Hotel.",
+  },
+  {
+    dayNumber: 6,
+    partofjourney: "hviledag",
+    title: "Mer i Llangollen",
+    description: "Plas Newydd museum og rolig dag i byen.",
+  },
+  {
+    dayNumber: 7,
+    partofjourney: "hviledag",
+    title: "Siste dag i Llangollen",
+    description: "Rolig dag før returen østover.",
+  },
+  {
+    dayNumber: 8,
+    partofjourney: "retur",
+    title: "Retur mot Whitchurch",
+    description:
+      "Cruise østover tilbake — rolig via Chirk eller raskere rute mot Ellesmere og Grindley-slusene.",
+  },
 ];
 
 export type Attraction = {

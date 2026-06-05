@@ -101,13 +101,13 @@ h3,
   justify-content: center;
   border-radius: 9999px;
   border: 1px solid #fff;
-  background-color: transparent;
+  background-color: #fff;
   padding: 0.75rem 1.5rem;
   font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--foreground);
   transition:
     color 0.15s ease,
     background-color 0.15s ease,
@@ -115,13 +115,17 @@ h3,
 }
 
 .btn-hero-outline:hover {
-  background-color: #fff;
+  background-color: var(--accent-soft);
   border-color: #fff;
   color: var(--foreground);
 }
 
 .info-box {
-  @apply flex flex-wrap items-center gap-4 border border-accent-border border-l-4 border-l-accent bg-accent-soft px-6 py-5;
+  @apply flex flex-col items-start gap-3 border border-accent-border border-l-4 border-l-accent bg-accent-soft px-4 py-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4 sm:px-6 sm:py-5;
+}
+
+.info-box .btn-primary {
+  @apply px-4 py-2 text-xs sm:px-6 sm:py-3 sm:text-sm;
 }
 
 .info-box p.text-muted,
