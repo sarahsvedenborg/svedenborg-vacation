@@ -67,7 +67,9 @@ export default async function MatOgGlutenfrittPage() {
       {settings.foodPageLinkUrl ? (
         <div className="info-box">
           {settings.foodPageLinkIntro ? (
-            <p className="text-body text-muted">{settings.foodPageLinkIntro}</p>
+            <p className="text-sm leading-snug text-muted sm:text-base sm:leading-relaxed">
+              {settings.foodPageLinkIntro}
+            </p>
           ) : null}
           <Link
             href={settings.foodPageLinkUrl}

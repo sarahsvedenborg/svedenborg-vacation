@@ -62,6 +62,13 @@ export default async function OpplevelserPage() {
 
       <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_17rem] xl:grid-cols-[minmax(0,1fr)_20rem] xl:gap-14">
         <div className="min-w-0 space-y-8">
+          <Link
+            href="/opplevelser/foresla"
+            className="btn-primary block w-full text-center lg:hidden"
+          >
+            Foreslå en aktivitet
+          </Link>
+
           <section className="space-y-8">
             <h2 className="font-serif text-2xl font-medium md:text-3xl">Noen utvalgte aktiviteter</h2>
             {attractionsWithImage.length > 0 ? (
@@ -137,7 +144,10 @@ export default async function OpplevelserPage() {
             </section>
           ) : null}
 
-          <Link href="/opplevelser/foresla" className="btn-primary block w-full text-center">
+          <Link
+            href="/opplevelser/foresla"
+            className="btn-primary hidden w-full text-center lg:block"
+          >
             Foreslå en aktivitet
           </Link>
         </aside>
