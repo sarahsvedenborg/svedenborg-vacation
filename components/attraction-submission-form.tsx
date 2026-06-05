@@ -14,8 +14,7 @@ export function AttractionSubmissionForm() {
   return (
     <section className="info-panel">
       <p className="text-body text-muted">
-        Forslag publiseres med en gang og vises på opplevelser-siden til et bilde er lagt til i
-        Studio.
+        Forslag regsitreres ved innsending og blir synlige på opplevelser-siden. Det kan ta noen minutter.
       </p>
 
       <form action={formAction} className="space-y-4">

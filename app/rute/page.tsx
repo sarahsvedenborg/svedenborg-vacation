@@ -1,3 +1,4 @@
+import { Clock } from "lucide-react";
 import { PageHeader } from "@/components/page-header";
 import { getItinerary, getRouteInformation } from "@/lib/content";
 import type { DailyItineraryItem, JourneyPart } from "@/lib/site-data";
@@ -10,11 +11,25 @@ const journeySections: { key: JourneyPart; title: string }[] = [
 
 function DayArticle({ day }: { day: DailyItineraryItem }) {
   return (
-    <article className="grid gap-4 py-8 md:grid-cols-[80px_1fr]">
-      <p className="section-label">Dag {day.dayNumber}</p>
+    <article className="grid gap-4 py-8 md:grid-cols-[120px_1fr]">
+      <div className="space-y-2">
+        <p className="section-label">Dag {day.dayNumber}</p>
+        {day.cruisingTime ? (
+          <p className="inline-flex w-fit items-center gap-1.5 rounded-full border border-accent-border bg-accent-soft px-2.5 py-1 text-xs text-text-body">
+            <Clock className="h-3.5 w-3.5 shrink-0 text-text-body" aria-hidden />
+            {day.cruisingTime}
+          </p>
+        ) : null}
+      </div>
       <div className="space-y-2">
         <h3 className="font-serif text-xl font-medium">{day.title}</h3>
         <p className="text-body whitespace-pre-line">{day.description}</p>
+        {day.info ? (
+          <p className="flex items-start gap-2 pt-1 text-sm italic text-muted">
+            <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-muted" aria-hidden />
+            <span>{day.info}</span>
+          </p>
+        ) : null}
       </div>
     </article>
   );
@@ -57,7 +72,7 @@ export default async function RutePage() {
         <section className="space-y-6">
           <h2 className="font-serif text-2xl font-medium">Llangollen tur/retur fra Whitchurch</h2>
           <div className="space-y-4 text-body whitespace-pre-line">{routeInfo.intro}</div>
-          {routeInfo.routeFacts.length > 0 ? (
+          {/*  {routeInfo.routeFacts.length > 0 ? (
             <div className="grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
               {routeInfo.routeFacts.map((fact) => (
                 <div key={fact.label} className="bg-white p-5">
@@ -68,7 +83,7 @@ export default async function RutePage() {
                 </div>
               ))}
             </div>
-          ) : null}
+          ) : null} */}
           {routeInfo.cruisingNotesUrl ? (
             <p className="text-body">
               <a

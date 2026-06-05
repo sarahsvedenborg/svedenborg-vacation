@@ -16,7 +16,7 @@ export default function ForeslaAktivitetPage() {
           href="/opplevelser"
           className="text-sm font-semibold uppercase tracking-[0.1em] underline underline-offset-4"
         >
-          Tilbake til se og gjøre
+          Tilbake til opplevelser
         </Link>
       </p>
     </div>
